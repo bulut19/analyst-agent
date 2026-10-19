@@ -1,0 +1,173 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1"><title>Returns are killing us. I need to see what&#x27;s going on.</title>
+<style>
+:root { --surface:#fcfcfb; --page:#f9f9f7; --ink:#0b0b0b; --ink2:#52514e; --muted:#898781; --rule:#e1e0d9; }
+body { margin:0; background:var(--page); color:var(--ink); font:15px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif; }
+main { max-width:1040px; margin:0 auto; padding:32px 16px 64px; }
+h1 { font-size:24px; margin:0 0 4px; } .q { color:var(--ink2); margin:0 0 24px; }
+.top { display:grid; grid-template-columns:minmax(220px,1fr) 2fr; gap:16px; margin-bottom:16px; }
+.card { background:var(--surface); border:1px solid var(--rule); border-radius:12px; padding:20px; margin-bottom:16px; }
+.hero .label { color:var(--ink2); font-size:13px; } .hero .value { font-size:48px; font-weight:600; line-height:1.1; margin:6px 0; }
+.hero .ctx { color:var(--ink2); font-size:13px; } h2 { font-size:13px; text-transform:uppercase; letter-spacing:.04em; color:var(--muted); margin:0 0 8px; }
+ul { margin:0; padding-left:20px; } li { margin:4px 0; }
+details { margin-top:8px; } summary { cursor:pointer; color:var(--ink2); font-size:13px; }
+table.data { border-collapse:collapse; font-size:13px; margin-top:8px; font-variant-numeric:tabular-nums; }
+table.data th, table.data td { border-bottom:1px solid var(--rule); padding:4px 12px 4px 0; text-align:left; }
+.notes { color:var(--ink2); font-size:13px; } @media (max-width:720px) { .top { grid-template-columns:1fr; } }
+</style></head><body><main>
+<h1>Returns are killing us. I need to see what&#x27;s going on.</h1><p class="q">Which product categories and brands have the highest return rates over the last 12 months (October 2025 to September 2026), among those with enough sales volume to matter, and how has the return rate moved month by month?</p>
+<div class="top"><section class="card hero"><div class="label">Company return rate, Oct 2025 to Sep 2026</div>
+<div class="value">28.2%</div><div class="ctx">Returned items as a share of items delivered or returned. Cancelled and not-yet-delivered items are left out.</div></section>
+<section class="card"><h2>Findings</h2><ul><li>Suits &amp; Sport Coats (<b>31.4%</b>), Socks (<b>30.7%</b>) and Leggings (<b>30.5%</b>) have the highest return rates among categories with at least <b>300</b> items, against a company rate of <b>28.2%</b>.</li><li>The category spread is narrow: from Underwear at <b>23.8%</b> up to Suits &amp; Sport Coats at <b>31.4%</b>, so no category is far from the average.</li><li>Only three brands reach <b>300</b> items in <b>12</b> months: Carhartt (<b>28.2%</b>), Allegra K (<b>28.1%</b>) and Calvin Klein (<b>26.3%</b>). None is clearly above the company rate, so this data does not point to a brand to raise with suppliers.</li><li>The other <b>2,714</b> brands sit below the cut-off and are not ranked, so brand-level problems may be hidden by low volume.</li><li>The monthly rate moved between <b>25.2%</b> (July 2026) and <b>30.8%</b> (November 2025) with no clear upward or downward trend; August and September 2026 are incomplete because returns are still arriving, so those rates are likely understated.</li><li>Similar categories are kept separate as agreed: Pants (<b>30.0%</b>) and Pants &amp; Capris (<b>29.0%</b>), Socks (<b>30.7%</b>) and Socks &amp; Hosiery (<b>27.9%</b>). The data does not record return reasons or suppliers, so it cannot explain why items come back.</li></ul></section></div>
+<section class="card"><div style="height:680px; width:100%;">                        <script>window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
+        <script charset="utf-8" src="https://cdn.plot.ly/plotly-4.1.1.min.js" integrity="sha256-O24V1F27f8pb0glCkelh3cVHLNiHAJ5gCaVtq2aNch8=" crossorigin="anonymous"></script>                <div id="c97b5d55-76e3-410d-b808-9b61997203a2" class="plotly-graph-div" style="height:100%; width:100%;"></div>            <script>                window.PLOTLYENV=window.PLOTLYENV || {};                                if (document.getElementById("c97b5d55-76e3-410d-b808-9b61997203a2")) {                    Plotly.newPlot(                        "c97b5d55-76e3-410d-b808-9b61997203a2",                        [{"cliponaxis":false,"hovertemplate":"%{y}: \u003cb\u003e%{x:.1%}\u003c\u002fb\u003e\u003cextra\u003e\u003c\u002fextra\u003e","marker":{"color":"#2a78d6","cornerradius":4},"orientation":"h","text":{"dtype":"f8","bdata":"iCDTp0TW0T\u002fkYBM3PtnRP10Aqp0JGdI\u002f09Xqp00h0j+MyHgRGS\u002fSP\u002fGKySyYk9I\u002fOPi5ideT0j+cFFmrLtLSPxsjBe6+49I\u002fd46PlTYs0z+HnPvsAmLTP0bigpkmadM\u002fPGf\u002fJAqL0z+V6i7WKqLTPxQUFBQUFNQ\u002f"},"textfont":{"color":"#52514e","size":11},"textposition":"outside","texttemplate":"%{text:.1%}","x":{"dtype":"f8","bdata":"iCDTp0TW0T\u002fkYBM3PtnRP10Aqp0JGdI\u002f09Xqp00h0j+MyHgRGS\u002fSP\u002fGKySyYk9I\u002fOPi5ideT0j+cFFmrLtLSPxsjBe6+49I\u002fd46PlTYs0z+HnPvsAmLTP0bigpkmadM\u002fPGf\u002fJAqL0z+V6i7WKqLTPxQUFBQUFNQ\u002f"},"y":["Active","Socks & Hosiery","Shorts","Intimates","Sweaters","Pants & Capris","Maternity","Fashion Hoodies & Sweatshirts","Accessories","Pants","Jeans","Outerwear & Coats","Leggings","Socks","Suits & Sport Coats"],"type":"bar"}],                        {"template":{"data":{"scatter":[{"type":"scatter"}]}},"xaxis":{"range":[0,0.35764705882352943],"tickfont":{"color":"#898781","size":11},"title":{"font":{"color":"#52514e","size":12},"text":"Return rate (%)","standoff":8},"tickformat":".0%","gridcolor":"#e1e0d9","gridwidth":1,"zeroline":true,"zerolinecolor":"#c3c2b7","automargin":true,"ticksuffix":""},"shapes":[{"line":{"color":"#52514e","dash":"dot","width":1},"type":"line","x0":0.282486,"x1":0.282486,"xref":"x","y0":0,"y1":1,"yref":"y domain"}],"font":{"family":"system-ui, -apple-system, \"Segoe UI\", sans-serif","color":"#0b0b0b","size":12},"title":{"font":{"size":15},"text":"\u003cb\u003eSuits, Socks and Leggings return most often\u003c\u002fb\u003e\u003cbr\u003e\u003cspan style='font-size:12px;color:#52514e'\u003eReturn rate by category, items ordered Oct 2025 to Sep 2026. Only categories with 300+ items. Top 15 shown. Dotted line: company average 28.2%.\u003c\u002fspan\u003e","x":0,"xanchor":"left"},"legend":{"font":{"color":"#52514e","size":11},"orientation":"h","y":-0.22,"x":0},"margin":{"l":10,"r":40,"t":70,"b":50},"hoverlabel":{"font":{"color":"#0b0b0b","family":"system-ui, -apple-system, \"Segoe UI\", sans-serif"},"bgcolor":"white","bordercolor":"#e1e0d9"},"yaxis":{"tickfont":{"color":"#52514e","size":11},"title":{"font":{"color":"#52514e","size":12},"text":"Category","standoff":8},"showgrid":false,"linecolor":"#c3c2b7","automargin":true},"paper_bgcolor":"#fcfcfb","plot_bgcolor":"#fcfcfb","showlegend":false,"bargap":0.35,"bargroupgap":0.08,"height":680},                        {"displayModeBar": false, "responsive": true}                    )                };            </script>        </div><details><summary>Table view</summary><table class="dataframe data">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Category</th>
+      <th>Return rate (%)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Suits &amp; Sport Coats</td>
+      <td>31.4%</td>
+    </tr>
+    <tr>
+      <td>Socks</td>
+      <td>30.7%</td>
+    </tr>
+    <tr>
+      <td>Leggings</td>
+      <td>30.5%</td>
+    </tr>
+    <tr>
+      <td>Outerwear &amp; Coats</td>
+      <td>30.3%</td>
+    </tr>
+    <tr>
+      <td>Jeans</td>
+      <td>30.3%</td>
+    </tr>
+    <tr>
+      <td>Pants</td>
+      <td>30.0%</td>
+    </tr>
+    <tr>
+      <td>Accessories</td>
+      <td>29.5%</td>
+    </tr>
+    <tr>
+      <td>Fashion Hoodies &amp; Sweatshirts</td>
+      <td>29.4%</td>
+    </tr>
+    <tr>
+      <td>Maternity</td>
+      <td>29.0%</td>
+    </tr>
+    <tr>
+      <td>Pants &amp; Capris</td>
+      <td>29.0%</td>
+    </tr>
+    <tr>
+      <td>Sweaters</td>
+      <td>28.4%</td>
+    </tr>
+    <tr>
+      <td>Intimates</td>
+      <td>28.3%</td>
+    </tr>
+    <tr>
+      <td>Shorts</td>
+      <td>28.3%</td>
+    </tr>
+    <tr>
+      <td>Socks &amp; Hosiery</td>
+      <td>27.9%</td>
+    </tr>
+    <tr>
+      <td>Active</td>
+      <td>27.9%</td>
+    </tr>
+  </tbody>
+</table></details></section><section class="card"><div style="height:272px; width:100%;">                            <div id="f311bbaa-d1af-4791-8d64-696768fa59c0" class="plotly-graph-div" style="height:100%; width:100%;"></div>            <script>                window.PLOTLYENV=window.PLOTLYENV || {};                                if (document.getElementById("f311bbaa-d1af-4791-8d64-696768fa59c0")) {                    Plotly.newPlot(                        "f311bbaa-d1af-4791-8d64-696768fa59c0",                        [{"cliponaxis":false,"hovertemplate":"%{y}: \u003cb\u003e%{x:.1%}\u003c\u002fb\u003e\u003cextra\u003e\u003c\u002fextra\u003e","marker":{"color":"#2a78d6","cornerradius":4},"orientation":"h","text":{"dtype":"f8","bdata":"Y1ARbqnZ0D9+lB\u002flR\u002fnRP8tPiLPyE9I\u002f"},"textfont":{"color":"#52514e","size":11},"textposition":"outside","texttemplate":"%{text:.1%}","x":{"dtype":"f8","bdata":"Y1ARbqnZ0D9+lB\u002flR\u002fnRP8tPiLPyE9I\u002f"},"y":["Calvin Klein","Allegra K","Carhartt"],"type":"bar"}],                        {"template":{"data":{"scatter":[{"type":"scatter"}]}},"xaxis":{"range":[0,0.32203404],"tickfont":{"color":"#898781","size":11},"title":{"font":{"color":"#52514e","size":12},"text":"Return rate (%)","standoff":8},"tickformat":".0%","gridcolor":"#e1e0d9","gridwidth":1,"zeroline":true,"zerolinecolor":"#c3c2b7","automargin":true,"ticksuffix":""},"shapes":[{"line":{"color":"#52514e","dash":"dot","width":1},"type":"line","x0":0.282486,"x1":0.282486,"xref":"x","y0":0,"y1":1,"yref":"y domain"}],"font":{"family":"system-ui, -apple-system, \"Segoe UI\", sans-serif","color":"#0b0b0b","size":12},"title":{"font":{"size":15},"text":"\u003cb\u003eOnly three brands pass the cut-off, none far above average\u003c\u002fb\u003e\u003cbr\u003e\u003cspan style='font-size:12px;color:#52514e'\u003eReturn rate by brand, items ordered Oct 2025 to Sep 2026. Brands with 300+ items only. Dotted line: company average 28.2%.\u003c\u002fspan\u003e","x":0,"xanchor":"left"},"legend":{"font":{"color":"#52514e","size":11},"orientation":"h","y":-0.22,"x":0},"margin":{"l":10,"r":40,"t":70,"b":50},"hoverlabel":{"font":{"color":"#0b0b0b","family":"system-ui, -apple-system, \"Segoe UI\", sans-serif"},"bgcolor":"white","bordercolor":"#e1e0d9"},"yaxis":{"tickfont":{"color":"#52514e","size":11},"title":{"font":{"color":"#52514e","size":12},"text":"Brand","standoff":8},"showgrid":false,"linecolor":"#c3c2b7","automargin":true},"paper_bgcolor":"#fcfcfb","plot_bgcolor":"#fcfcfb","showlegend":false,"bargap":0.35,"bargroupgap":0.08,"height":272},                        {"displayModeBar": false, "responsive": true}                    )                };            </script>        </div><details><summary>Table view</summary><table class="dataframe data">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Brand</th>
+      <th>Return rate (%)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Carhartt</td>
+      <td>28.2%</td>
+    </tr>
+    <tr>
+      <td>Allegra K</td>
+      <td>28.1%</td>
+    </tr>
+    <tr>
+      <td>Calvin Klein</td>
+      <td>26.3%</td>
+    </tr>
+  </tbody>
+</table></details></section><section class="card"><div style="height:430px; width:100%;">                            <div id="d0bd7789-01ed-4839-915f-2205780e9f12" class="plotly-graph-div" style="height:100%; width:100%;"></div>            <script>                window.PLOTLYENV=window.PLOTLYENV || {};                                if (document.getElementById("d0bd7789-01ed-4839-915f-2205780e9f12")) {                    Plotly.newPlot(                        "d0bd7789-01ed-4839-915f-2205780e9f12",                        [{"hovertemplate":"\u003cb\u003e%{y:.1%}\u003c\u002fb\u003e  \u003cextra\u003e\u003c\u002fextra\u003e","line":{"color":"#2a78d6","shape":"linear","width":2},"marker":{"color":"#2a78d6","line":{"color":"#fcfcfb","width":2},"size":6},"mode":"lines+markers","name":"return_rate","x":["2025-10-01","2025-11-01","2025-12-01","2026-01-01","2026-02-01","2026-03-01","2026-04-01","2026-05-01","2026-06-01","2026-07-01","2026-08-01","2026-09-01"],"y":{"dtype":"f8","bdata":"uW62peL+0j\u002fCCN8\u002fxLPTP2aJBAutf9E\u002fqWceV6\u002f\u002f0T+bmG4PDvbRP\u002fJqitKXxtE\u002fPHxLDW4r0j8ouKFp3X7SP4SDg4ODg9M\u002fcAIncAIn0D+glAy\u002fGfjQP+6rtVOQoNI\u002f"},"type":"scatter"}],                        {"template":{"data":{"scatter":[{"type":"scatter"}]}},"hovermode":"x unified","font":{"family":"system-ui, -apple-system, \"Segoe UI\", sans-serif","color":"#0b0b0b","size":12},"title":{"font":{"size":15},"text":"\u003cb\u003eMonthly return rate stays between 25% and 31%\u003c\u002fb\u003e\u003cbr\u003e\u003cspan style='font-size:12px;color:#52514e'\u003eCompany return rate by order month, Oct 2025 to Sep 2026. Aug and Sep 2026 are incomplete and likely understated.\u003c\u002fspan\u003e","x":0,"xanchor":"left"},"legend":{"font":{"color":"#52514e","size":11},"orientation":"h","y":-0.22,"x":0},"margin":{"l":10,"r":40,"t":70,"b":50},"hoverlabel":{"font":{"color":"#0b0b0b","family":"system-ui, -apple-system, \"Segoe UI\", sans-serif"},"bgcolor":"white","bordercolor":"#e1e0d9"},"xaxis":{"tickfont":{"color":"#52514e","size":11},"title":{"font":{"color":"#52514e","size":12},"text":"Order month","standoff":8},"showgrid":false,"linecolor":"#c3c2b7","automargin":true},"yaxis":{"tickfont":{"color":"#898781","size":11},"title":{"font":{"color":"#52514e","size":12},"text":"Return rate (%)","standoff":8},"tickformat":".0%","gridcolor":"#e1e0d9","gridwidth":1,"zeroline":true,"zerolinecolor":"#c3c2b7","automargin":true,"ticksuffix":""},"paper_bgcolor":"#fcfcfb","plot_bgcolor":"#fcfcfb","showlegend":false,"bargap":0.35,"bargroupgap":0.08,"height":430},                        {"displayModeBar": false, "responsive": true}                    )                };            </script>        </div><details><summary>Table view</summary><table class="dataframe data">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Order month</th>
+      <th>Return rate (%)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>2025-10-01</td>
+      <td>29.7%</td>
+    </tr>
+    <tr>
+      <td>2025-11-01</td>
+      <td>30.8%</td>
+    </tr>
+    <tr>
+      <td>2025-12-01</td>
+      <td>27.3%</td>
+    </tr>
+    <tr>
+      <td>2026-01-01</td>
+      <td>28.1%</td>
+    </tr>
+    <tr>
+      <td>2026-02-01</td>
+      <td>28.1%</td>
+    </tr>
+    <tr>
+      <td>2026-03-01</td>
+      <td>27.8%</td>
+    </tr>
+    <tr>
+      <td>2026-04-01</td>
+      <td>28.4%</td>
+    </tr>
+    <tr>
+      <td>2026-05-01</td>
+      <td>28.9%</td>
+    </tr>
+    <tr>
+      <td>2026-06-01</td>
+      <td>30.5%</td>
+    </tr>
+    <tr>
+      <td>2026-07-01</td>
+      <td>25.2%</td>
+    </tr>
+    <tr>
+      <td>2026-08-01</td>
+      <td>26.5%</td>
+    </tr>
+    <tr>
+      <td>2026-09-01</td>
+      <td>29.1%</td>
+    </tr>
+  </tbody>
+</table></details></section>
+<section class="card notes"><h2>Data notes</h2><p>I found no high-risk problems. The brief counts items by status and groups them by order month, category and brand, so most of these issues only touch columns we don&#x27;t use. The two that can change the ranking are the 5 items with no matching product and the 5 misspelled categories. Both are tiny, and both can be fixed with simple rules.</p><p><b>Period:</b> 2025-10-01 to 2026-09-30.</p>
+<p><b>Confirmed with the stakeholder:</b></p><ul><li>How many items should a brand or category need before it can be ranked? We expect very few of the 2,756 brands to reach 300 items in 12 months. Answer: 300 for both is fine. That&#x27;s in line with what I said, and I&#x27;d rather see a short list of brands that really matter than a long list of noisy ones.</li><li>Some categories overlap: Socks and Socks &amp; Hosiery, Pants and Pants &amp; Capris, Suits and Suits &amp; Sport Coats. Should we combine each pair? Answer: Keep them separate as they are in the data for now. I don&#x27;t want to guess at groupings before a supplier conversation, and I&#x27;ll check with merchandising if one of them comes up as a candidate.</li></ul><p><b>Decisions assumed:</b></p><ul><li>Items are assigned to a month by the order date (order_items.created_at), not the return date.</li><li>Items still Processing or Shipped are left out, since their outcome is not known.</li><li>Return rate is counted in items, not orders or money.</li><li>The company-wide return rate is shown as a reference line on the trend and as a benchmark on the ranking. It uses all items in the window, including low-volume groups, and ignores filters.</li><li>Where there is nothing to divide by (no items sold), the rate is blank and shown as &#x27;no sales&#x27;. The group is not ranked.</li><li>Null brands are grouped as &#x27;Unknown&#x27; and are not ranked as a brand. They stay in totals.</li><li>Order items whose product does not exist (5 rows) are excluded from every metric so all views add up.</li><li>The trend shows the overall rate and the rate for any selected category or brand. Aug and Sep 2026 are marked incomplete because recent returns are still arriving. The rate for these months is likely understated.</li><li>Brand stands in for supplier, because the data has no supplier field. No return reasons are available, so none are shown.</li><li>Brand spelling variants beyond spaces and case are not merged.</li></ul></section>
+</main></body></html>

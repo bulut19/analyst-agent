@@ -1,0 +1,399 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1"><title>Can you build me a dashboard on how our marketing channels are doing?</title>
+<style>
+:root { --surface:#fcfcfb; --page:#f9f9f7; --ink:#0b0b0b; --ink2:#52514e; --muted:#898781; --rule:#e1e0d9; }
+body { margin:0; background:var(--page); color:var(--ink); font:15px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif; }
+main { max-width:1040px; margin:0 auto; padding:32px 16px 64px; }
+h1 { font-size:24px; margin:0 0 4px; } .q { color:var(--ink2); margin:0 0 24px; }
+.top { display:grid; grid-template-columns:minmax(220px,1fr) 2fr; gap:16px; margin-bottom:16px; }
+.card { background:var(--surface); border:1px solid var(--rule); border-radius:12px; padding:20px; margin-bottom:16px; }
+.hero .label { color:var(--ink2); font-size:13px; } .hero .value { font-size:48px; font-weight:600; line-height:1.1; margin:6px 0; }
+.hero .ctx { color:var(--ink2); font-size:13px; } h2 { font-size:13px; text-transform:uppercase; letter-spacing:.04em; color:var(--muted); margin:0 0 8px; }
+ul { margin:0; padding-left:20px; } li { margin:4px 0; }
+details { margin-top:8px; } summary { cursor:pointer; color:var(--ink2); font-size:13px; }
+table.data { border-collapse:collapse; font-size:13px; margin-top:8px; font-variant-numeric:tabular-nums; }
+table.data th, table.data td { border-bottom:1px solid var(--rule); padding:4px 12px 4px 0; text-align:left; }
+.notes { color:var(--ink2); font-size:13px; } @media (max-width:720px) { .top { grid-template-columns:1fr; } }
+</style></head><body><main>
+<h1>Can you build me a dashboard on how our marketing channels are doing?</h1><p class="q">Which marketing channels bring customers who place a second completed order within 12 months of their first?</p>
+<div class="top"><section class="card hero"><div class="label">12-month repeat rate, September 2025 first-time buyers (all channels)</div>
+<div class="value">n/a</div><div class="ctx">Share of customers whose first completed order was in Sep 2025 and who ordered again within 12 months.</div></section>
+<section class="card"><h2>Findings</h2><ul><li>Search and Organic bring customers who return most reliably: for Sep 2025 first-time buyers, Organic had a <b>17.4%</b> repeat rate (<b>69</b> customers) and Search <b>11.4%</b> (<b>386</b> customers).</li><li>Across all channels, the <b>12</b>-month repeat rate rose from <b>4.0%</b> for Oct 2023 first-time buyers to <b>11.8%</b> for Sep 2025 first-time buyers.</li><li>Search is the biggest source of new customers, with <b>386</b> of the <b>544</b> first-time buyers in Sep 2025, so it drives most of the repeat customers (<b>44</b> of <b>64</b>).</li><li>Display, Email and Facebook groups are usually under <b>30</b> customers a month, so their rates swing a lot, for example Display went from <b>0.0%</b> in Apr 2025 to <b>25.0%</b> in Mar 2025; no firm ranking of these channels is possible from single months.</li><li>Channel is the signup channel on the customer record, and a customer counts as repeat only with a second completed order. Recent cohorts may be slightly understated because some recent orders may still become complete.</li><li>The data has no marketing spend, so it cannot show which channel gives the best value for money. Budget moves should also use spend figures from outside this data.</li></ul></section></div>
+<section class="card"><div style="height:430px; width:100%;">                        <script>window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
+        <script charset="utf-8" src="https://cdn.plot.ly/plotly-4.1.1.min.js" integrity="sha256-O24V1F27f8pb0glCkelh3cVHLNiHAJ5gCaVtq2aNch8=" crossorigin="anonymous"></script>                <div id="2f1c324c-0830-471e-abe1-7a3483deb428" class="plotly-graph-div" style="height:100%; width:100%;"></div>            <script>                window.PLOTLYENV=window.PLOTLYENV || {};                                if (document.getElementById("2f1c324c-0830-471e-abe1-7a3483deb428")) {                    Plotly.newPlot(                        "2f1c324c-0830-471e-abe1-7a3483deb428",                        [{"hovertemplate":"\u003cb\u003e%{y:.1%}\u003c\u002fb\u003e  \u003cextra\u003e\u003c\u002fextra\u003e","line":{"color":"#2a78d6","shape":"linear","width":2},"marker":{"color":"#2a78d6","line":{"color":"#fcfcfb","width":2},"size":6},"mode":"lines+markers","name":"repeat_rate","x":["2023-10-01","2023-11-01","2023-12-01","2024-01-01","2024-02-01","2024-03-01","2024-04-01","2024-05-01","2024-06-01","2024-07-01","2024-08-01","2024-09-01","2024-10-01","2024-11-01","2024-12-01","2025-01-01","2025-02-01","2025-03-01","2025-04-01","2025-05-01","2025-06-01","2025-07-01","2025-08-01","2025-09-01"],"y":{"dtype":"f8","bdata":"exSuR+F6pD822WSTTTapP6534wu7XKk\u002fujU\u002fLFIGrj+FChUqVKiwP+U1lNdQXrM\u002fd9W9Q6KKsD\u002fnnHPOOeesP4lEIpFIJLI\u002fUUWIt6vurT\u002f6BmoYc9WyPwMad+u8Aqo\u002fZPLe+IDLsj85BS+n4OW0PxKZhu1mebI\u002fETdajvm+sj9lEHngKtq5PxS9LhS9LrQ\u002fiRCjYhNeuz\u002fq6F5dDoy1P8ZaRXRKdbc\u002foWnRrg+atj+kax6133a2Px4eHh4eHr4\u002f"},"type":"scatter"}],                        {"template":{"data":{"scatter":[{"type":"scatter"}]}},"hovermode":"x unified","font":{"family":"system-ui, -apple-system, \"Segoe UI\", sans-serif","color":"#0b0b0b","size":12},"title":{"font":{"size":15},"text":"\u003cb\u003eRepeat rate across all channels has climbed since late 2023\u003c\u002fb\u003e\u003cbr\u003e\u003cspan style='font-size:12px;color:#52514e'\u003eShare of new customers who placed a second completed order within 12 months, by month of first order, Oct 2023 to Sep 2025\u003c\u002fspan\u003e","x":0,"xanchor":"left"},"legend":{"font":{"color":"#52514e","size":11},"orientation":"h","y":-0.22,"x":0},"margin":{"l":10,"r":40,"t":70,"b":50},"hoverlabel":{"font":{"color":"#0b0b0b","family":"system-ui, -apple-system, \"Segoe UI\", sans-serif"},"bgcolor":"white","bordercolor":"#e1e0d9"},"xaxis":{"tickfont":{"color":"#52514e","size":11},"title":{"font":{"color":"#52514e","size":12},"text":"Month of first completed order","standoff":8},"showgrid":false,"linecolor":"#c3c2b7","automargin":true},"yaxis":{"tickfont":{"color":"#898781","size":11},"title":{"font":{"color":"#52514e","size":12},"text":"12-month repeat rate (%)","standoff":8},"tickformat":".0%","gridcolor":"#e1e0d9","gridwidth":1,"zeroline":true,"zerolinecolor":"#c3c2b7","automargin":true,"ticksuffix":""},"paper_bgcolor":"#fcfcfb","plot_bgcolor":"#fcfcfb","showlegend":false,"bargap":0.35,"bargroupgap":0.08,"height":430},                        {"displayModeBar": false, "responsive": true}                    )                };            </script>        </div><details><summary>Table view</summary><table class="dataframe data">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Month of first completed order</th>
+      <th>12-month repeat rate (%)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>2023-10-01</td>
+      <td>4.0%</td>
+    </tr>
+    <tr>
+      <td>2023-11-01</td>
+      <td>4.9%</td>
+    </tr>
+    <tr>
+      <td>2023-12-01</td>
+      <td>5.0%</td>
+    </tr>
+    <tr>
+      <td>2024-01-01</td>
+      <td>5.9%</td>
+    </tr>
+    <tr>
+      <td>2024-02-01</td>
+      <td>6.5%</td>
+    </tr>
+    <tr>
+      <td>2024-03-01</td>
+      <td>7.6%</td>
+    </tr>
+    <tr>
+      <td>2024-04-01</td>
+      <td>6.5%</td>
+    </tr>
+    <tr>
+      <td>2024-05-01</td>
+      <td>5.6%</td>
+    </tr>
+    <tr>
+      <td>2024-06-01</td>
+      <td>7.1%</td>
+    </tr>
+    <tr>
+      <td>2024-07-01</td>
+      <td>5.8%</td>
+    </tr>
+    <tr>
+      <td>2024-08-01</td>
+      <td>7.4%</td>
+    </tr>
+    <tr>
+      <td>2024-09-01</td>
+      <td>5.1%</td>
+    </tr>
+    <tr>
+      <td>2024-10-01</td>
+      <td>7.3%</td>
+    </tr>
+    <tr>
+      <td>2024-11-01</td>
+      <td>8.2%</td>
+    </tr>
+    <tr>
+      <td>2024-12-01</td>
+      <td>7.2%</td>
+    </tr>
+    <tr>
+      <td>2025-01-01</td>
+      <td>7.3%</td>
+    </tr>
+    <tr>
+      <td>2025-02-01</td>
+      <td>10.1%</td>
+    </tr>
+    <tr>
+      <td>2025-03-01</td>
+      <td>7.9%</td>
+    </tr>
+    <tr>
+      <td>2025-04-01</td>
+      <td>10.7%</td>
+    </tr>
+    <tr>
+      <td>2025-05-01</td>
+      <td>8.4%</td>
+    </tr>
+    <tr>
+      <td>2025-06-01</td>
+      <td>9.2%</td>
+    </tr>
+    <tr>
+      <td>2025-07-01</td>
+      <td>8.8%</td>
+    </tr>
+    <tr>
+      <td>2025-08-01</td>
+      <td>8.8%</td>
+    </tr>
+    <tr>
+      <td>2025-09-01</td>
+      <td>11.8%</td>
+    </tr>
+  </tbody>
+</table></details></section><section class="card"><div style="height:430px; width:100%;">                            <div id="bad99481-f144-4202-b894-abe67c55a710" class="plotly-graph-div" style="height:100%; width:100%;"></div>            <script>                window.PLOTLYENV=window.PLOTLYENV || {};                                if (document.getElementById("bad99481-f144-4202-b894-abe67c55a710")) {                    Plotly.newPlot(                        "bad99481-f144-4202-b894-abe67c55a710",                        [{"hovertemplate":"\u003cb\u003e%{y:.1%}\u003c\u002fb\u003e  Organic\u003cextra\u003e\u003c\u002fextra\u003e","line":{"color":"#2a78d6","shape":"linear","width":2},"marker":{"color":"#2a78d6","line":{"color":"#fcfcfb","width":2},"size":6},"mode":"lines+markers","name":"Organic","x":["2023-10-01","2023-11-01","2023-12-01","2024-01-01","2024-02-01","2024-03-01","2024-04-01","2024-05-01","2024-06-01","2024-07-01","2024-08-01","2024-09-01","2024-10-01","2024-11-01","2024-12-01","2025-01-01","2025-02-01","2025-03-01","2025-04-01","2025-05-01","2025-06-01","2025-07-01","2025-08-01","2025-09-01"],"y":{"dtype":"f8","bdata":"9AV9QV\u002fQpz8apEEapEGqPwAAAAAAAAAAKK+hvIbyqj9VVVVVVVW1P7gehetRuK4\u002fQUyuICZXsD8IH3zwwQevP1cQkyuIybU\u002fDSd1Xx5bsT8NJ3VfHluRP9uBuXZgrq0\u002ffBphuacRtj\u002fGGGOMMcaoP0FMriAmV7A\u002fAAAAAAAAvD+yFUHDSd3HP8IU+awbTLE\u002fHh4eHh4erj8LmwOJVtisPyivobyG8ro\u002f6k1vetObvj\u002fQusEU+ay7P2QhC1nIQsY\u002f"},"type":"scatter"},{"hovertemplate":"\u003cb\u003e%{y:.1%}\u003c\u002fb\u003e  Search\u003cextra\u003e\u003c\u002fextra\u003e","line":{"color":"#eb6834","shape":"linear","width":2},"marker":{"color":"#eb6834","line":{"color":"#fcfcfb","width":2},"size":6},"mode":"lines+markers","name":"Search","x":["2023-10-01","2023-11-01","2023-12-01","2024-01-01","2024-02-01","2024-03-01","2024-04-01","2024-05-01","2024-06-01","2024-07-01","2024-08-01","2024-09-01","2024-10-01","2024-11-01","2024-12-01","2025-01-01","2025-02-01","2025-03-01","2025-04-01","2025-05-01","2025-06-01","2025-07-01","2025-08-01","2025-09-01"],"y":{"dtype":"f8","bdata":"VVVVVVVVpT+HG2644YarP8idJezmt7A\u002fC5sDiVbYrD9nt\u002fCrMZGuP3dvlab4JbE\u002fEhiBERiBsT8Hm7jxyY6sP6fjH1yY1LA\u002f0LrBFPmsqz9VVVVVVVW1P9daa6211qo\u002faTbd+PfWsT9CewntJbS3P9RBHdRBHbQ\u002f6eVPW2jAsj9wl3oyfru0P79GwWnxa7Q\u002fAAAAAAAAwD+i32wd+s22Pxqs0Bms0Lk\u002fEuEiDxVgtj9LBahW\u002fyq1P+OVT8RsLr0\u002f"},"type":"scatter"}],                        {"template":{"data":{"scatter":[{"type":"scatter"}]}},"hovermode":"x unified","font":{"family":"system-ui, -apple-system, \"Segoe UI\", sans-serif","color":"#0b0b0b","size":12},"title":{"font":{"size":15},"text":"\u003cb\u003eOrganic customers now come back more often than Search customers\u003c\u002fb\u003e\u003cbr\u003e\u003cspan style='font-size:12px;color:#52514e'\u003e12-month repeat rate by month of first order. Only the two channels with groups mostly above 30 customers.\u003c\u002fspan\u003e","x":0,"xanchor":"left"},"legend":{"font":{"color":"#52514e","size":11},"orientation":"h","y":-0.22,"x":0},"margin":{"l":10,"r":40,"t":70,"b":50},"hoverlabel":{"font":{"color":"#0b0b0b","family":"system-ui, -apple-system, \"Segoe UI\", sans-serif"},"bgcolor":"white","bordercolor":"#e1e0d9"},"xaxis":{"tickfont":{"color":"#52514e","size":11},"title":{"font":{"color":"#52514e","size":12},"text":"Month of first completed order","standoff":8},"showgrid":false,"linecolor":"#c3c2b7","automargin":true},"yaxis":{"tickfont":{"color":"#898781","size":11},"title":{"font":{"color":"#52514e","size":12},"text":"12-month repeat rate (%)","standoff":8},"tickformat":".0%","gridcolor":"#e1e0d9","gridwidth":1,"zeroline":true,"zerolinecolor":"#c3c2b7","automargin":true,"ticksuffix":""},"paper_bgcolor":"#fcfcfb","plot_bgcolor":"#fcfcfb","showlegend":true,"bargap":0.35,"bargroupgap":0.08,"height":430},                        {"displayModeBar": false, "responsive": true}                    )                };            </script>        </div><details><summary>Table view</summary><table class="dataframe data">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Month of first completed order</th>
+      <th>Channel</th>
+      <th>12-month repeat rate (%)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>2023-10-01</td>
+      <td>Organic</td>
+      <td>4.7%</td>
+    </tr>
+    <tr>
+      <td>2023-10-01</td>
+      <td>Search</td>
+      <td>4.2%</td>
+    </tr>
+    <tr>
+      <td>2023-11-01</td>
+      <td>Organic</td>
+      <td>5.1%</td>
+    </tr>
+    <tr>
+      <td>2023-11-01</td>
+      <td>Search</td>
+      <td>5.4%</td>
+    </tr>
+    <tr>
+      <td>2023-12-01</td>
+      <td>Organic</td>
+      <td>0.0%</td>
+    </tr>
+    <tr>
+      <td>2023-12-01</td>
+      <td>Search</td>
+      <td>6.5%</td>
+    </tr>
+    <tr>
+      <td>2024-01-01</td>
+      <td>Organic</td>
+      <td>5.3%</td>
+    </tr>
+    <tr>
+      <td>2024-01-01</td>
+      <td>Search</td>
+      <td>5.6%</td>
+    </tr>
+    <tr>
+      <td>2024-02-01</td>
+      <td>Organic</td>
+      <td>8.3%</td>
+    </tr>
+    <tr>
+      <td>2024-02-01</td>
+      <td>Search</td>
+      <td>6.0%</td>
+    </tr>
+    <tr>
+      <td>2024-03-01</td>
+      <td>Search</td>
+      <td>6.7%</td>
+    </tr>
+    <tr>
+      <td>2024-03-01</td>
+      <td>Organic</td>
+      <td>6.0%</td>
+    </tr>
+    <tr>
+      <td>2024-04-01</td>
+      <td>Organic</td>
+      <td>6.4%</td>
+    </tr>
+    <tr>
+      <td>2024-04-01</td>
+      <td>Search</td>
+      <td>6.8%</td>
+    </tr>
+    <tr>
+      <td>2024-05-01</td>
+      <td>Organic</td>
+      <td>6.1%</td>
+    </tr>
+    <tr>
+      <td>2024-05-01</td>
+      <td>Search</td>
+      <td>5.6%</td>
+    </tr>
+    <tr>
+      <td>2024-06-01</td>
+      <td>Organic</td>
+      <td>8.5%</td>
+    </tr>
+    <tr>
+      <td>2024-06-01</td>
+      <td>Search</td>
+      <td>6.6%</td>
+    </tr>
+    <tr>
+      <td>2024-07-01</td>
+      <td>Organic</td>
+      <td>6.8%</td>
+    </tr>
+    <tr>
+      <td>2024-07-01</td>
+      <td>Search</td>
+      <td>5.4%</td>
+    </tr>
+    <tr>
+      <td>2024-08-01</td>
+      <td>Organic</td>
+      <td>1.7%</td>
+    </tr>
+    <tr>
+      <td>2024-08-01</td>
+      <td>Search</td>
+      <td>8.3%</td>
+    </tr>
+    <tr>
+      <td>2024-09-01</td>
+      <td>Search</td>
+      <td>5.2%</td>
+    </tr>
+    <tr>
+      <td>2024-09-01</td>
+      <td>Organic</td>
+      <td>5.8%</td>
+    </tr>
+    <tr>
+      <td>2024-10-01</td>
+      <td>Organic</td>
+      <td>8.6%</td>
+    </tr>
+    <tr>
+      <td>2024-10-01</td>
+      <td>Search</td>
+      <td>7.0%</td>
+    </tr>
+    <tr>
+      <td>2024-11-01</td>
+      <td>Organic</td>
+      <td>4.8%</td>
+    </tr>
+    <tr>
+      <td>2024-11-01</td>
+      <td>Search</td>
+      <td>9.3%</td>
+    </tr>
+    <tr>
+      <td>2024-12-01</td>
+      <td>Organic</td>
+      <td>6.4%</td>
+    </tr>
+    <tr>
+      <td>2024-12-01</td>
+      <td>Search</td>
+      <td>7.9%</td>
+    </tr>
+    <tr>
+      <td>2025-01-01</td>
+      <td>Organic</td>
+      <td>10.9%</td>
+    </tr>
+    <tr>
+      <td>2025-01-01</td>
+      <td>Search</td>
+      <td>7.3%</td>
+    </tr>
+    <tr>
+      <td>2025-02-01</td>
+      <td>Organic</td>
+      <td>18.6%</td>
+    </tr>
+    <tr>
+      <td>2025-02-01</td>
+      <td>Search</td>
+      <td>8.1%</td>
+    </tr>
+    <tr>
+      <td>2025-03-01</td>
+      <td>Search</td>
+      <td>8.0%</td>
+    </tr>
+    <tr>
+      <td>2025-03-01</td>
+      <td>Organic</td>
+      <td>6.8%</td>
+    </tr>
+    <tr>
+      <td>2025-04-01</td>
+      <td>Organic</td>
+      <td>5.9%</td>
+    </tr>
+    <tr>
+      <td>2025-04-01</td>
+      <td>Search</td>
+      <td>12.5%</td>
+    </tr>
+    <tr>
+      <td>2025-05-01</td>
+      <td>Organic</td>
+      <td>5.6%</td>
+    </tr>
+    <tr>
+      <td>2025-05-01</td>
+      <td>Search</td>
+      <td>8.9%</td>
+    </tr>
+    <tr>
+      <td>2025-06-01</td>
+      <td>Organic</td>
+      <td>10.5%</td>
+    </tr>
+    <tr>
+      <td>2025-06-01</td>
+      <td>Search</td>
+      <td>10.1%</td>
+    </tr>
+    <tr>
+      <td>2025-07-01</td>
+      <td>Organic</td>
+      <td>12.0%</td>
+    </tr>
+    <tr>
+      <td>2025-07-01</td>
+      <td>Search</td>
+      <td>8.7%</td>
+    </tr>
+    <tr>
+      <td>2025-08-01</td>
+      <td>Organic</td>
+      <td>10.8%</td>
+    </tr>
+    <tr>
+      <td>2025-08-01</td>
+      <td>Search</td>
+      <td>8.3%</td>
+    </tr>
+    <tr>
+      <td>2025-09-01</td>
+      <td>Organic</td>
+      <td>17.4%</td>
+    </tr>
+    <tr>
+      <td>2025-09-01</td>
+      <td>Search</td>
+      <td>11.4%</td>
+    </tr>
+  </tbody>
+</table></details></section><section class="card"><div style="height:240px; width:100%;">                            <div id="5281b07b-30f2-4b46-b282-00620ae111a7" class="plotly-graph-div" style="height:100%; width:100%;"></div>            <script>                window.PLOTLYENV=window.PLOTLYENV || {};                                if (document.getElementById("5281b07b-30f2-4b46-b282-00620ae111a7")) {                    Plotly.newPlot(                        "5281b07b-30f2-4b46-b282-00620ae111a7",                        [{"cliponaxis":false,"hovertemplate":"%{y}: \u003cb\u003e%{x:.1%}\u003c\u002fb\u003e\u003cextra\u003e\u003c\u002fextra\u003e","marker":{"color":"#2a78d6","cornerradius":4},"orientation":"h","text":[],"textfont":{"color":"#52514e","size":11},"textposition":"outside","texttemplate":"%{text:.1%}","x":[],"y":[],"type":"bar"}],                        {"template":{"data":{"scatter":[{"type":"scatter"}]}},"xaxis":{"range":[0,0.134064],"tickfont":{"color":"#898781","size":11},"title":{"font":{"color":"#52514e","size":12},"text":"12-month repeat rate (%)","standoff":8},"tickformat":".0%","gridcolor":"#e1e0d9","gridwidth":1,"zeroline":true,"zerolinecolor":"#c3c2b7","automargin":true,"ticksuffix":""},"shapes":[{"line":{"color":"#52514e","dash":"dot","width":1},"type":"line","x0":0.1176,"x1":0.1176,"xref":"x","y0":0,"y1":1,"yref":"y domain"}],"font":{"family":"system-ui, -apple-system, \"Segoe UI\", sans-serif","color":"#0b0b0b","size":12},"title":{"font":{"size":15},"text":"\u003cb\u003eOrganic and Search lead among Sep 2025 first-time buyers\u003c\u002fb\u003e\u003cbr\u003e\u003cspan style='font-size:12px;color:#52514e'\u003e12-month repeat rate by signup channel, customers whose first completed order was in Sep 2025. Display and Facebook groups are small. Dotted line: all-channel average 11.8%.\u003c\u002fspan\u003e","x":0,"xanchor":"left"},"legend":{"font":{"color":"#52514e","size":11},"orientation":"h","y":-0.22,"x":0},"margin":{"l":10,"r":40,"t":70,"b":50},"hoverlabel":{"font":{"color":"#0b0b0b","family":"system-ui, -apple-system, \"Segoe UI\", sans-serif"},"bgcolor":"white","bordercolor":"#e1e0d9"},"yaxis":{"tickfont":{"color":"#52514e","size":11},"title":{"font":{"color":"#52514e","size":12},"text":"Signup channel","standoff":8},"showgrid":false,"linecolor":"#c3c2b7","automargin":true},"paper_bgcolor":"#fcfcfb","plot_bgcolor":"#fcfcfb","showlegend":false,"bargap":0.35,"bargroupgap":0.08,"height":240},                        {"displayModeBar": false, "responsive": true}                    )                };            </script>        </div><details><summary>Table view</summary><table class="dataframe data">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Signup channel</th>
+      <th>12-month repeat rate (%)</th>
+    </tr>
+  </thead>
+  <tbody>
+  </tbody>
+</table></details></section><section class="card"><div style="height:240px; width:100%;">                            <div id="f9182a99-eaf5-4000-91f0-1e7e37090886" class="plotly-graph-div" style="height:100%; width:100%;"></div>            <script>                window.PLOTLYENV=window.PLOTLYENV || {};                                if (document.getElementById("f9182a99-eaf5-4000-91f0-1e7e37090886")) {                    Plotly.newPlot(                        "f9182a99-eaf5-4000-91f0-1e7e37090886",                        [{"cliponaxis":false,"hovertemplate":"%{y}: \u003cb\u003e%{x:,.0f}\u003c\u002fb\u003e\u003cextra\u003e\u003c\u002fextra\u003e","marker":{"color":"#2a78d6","cornerradius":4},"orientation":"h","text":[],"textfont":{"color":"#52514e","size":11},"textposition":"outside","texttemplate":"%{text:,.0f}","x":[],"y":[],"type":"bar"}],                        {"template":{"data":{"scatter":[{"type":"scatter"}]}},"font":{"family":"system-ui, -apple-system, \"Segoe UI\", sans-serif","color":"#0b0b0b","size":12},"title":{"font":{"size":15},"text":"\u003cb\u003eSearch brings most new customers; other channels are small\u003c\u002fb\u003e\u003cbr\u003e\u003cspan style='font-size:12px;color:#52514e'\u003eNew customers by signup channel, first completed order in Sep 2025\u003c\u002fspan\u003e","x":0,"xanchor":"left"},"legend":{"font":{"color":"#52514e","size":11},"orientation":"h","y":-0.22,"x":0},"margin":{"l":10,"r":40,"t":70,"b":50},"hoverlabel":{"font":{"color":"#0b0b0b","family":"system-ui, -apple-system, \"Segoe UI\", sans-serif"},"bgcolor":"white","bordercolor":"#e1e0d9"},"xaxis":{"tickfont":{"color":"#898781","size":11},"title":{"font":{"color":"#52514e","size":12},"text":"New customers","standoff":8},"tickformat":",.0f","gridcolor":"#e1e0d9","gridwidth":1,"zeroline":true,"zerolinecolor":"#c3c2b7","automargin":true,"ticksuffix":""},"yaxis":{"tickfont":{"color":"#52514e","size":11},"title":{"font":{"color":"#52514e","size":12},"text":"Signup channel","standoff":8},"showgrid":false,"linecolor":"#c3c2b7","automargin":true},"paper_bgcolor":"#fcfcfb","plot_bgcolor":"#fcfcfb","showlegend":false,"bargap":0.35,"bargroupgap":0.08,"height":240},                        {"displayModeBar": false, "responsive": true}                    )                };            </script>        </div><details><summary>Table view</summary><table class="dataframe data">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Signup channel</th>
+      <th>New customers</th>
+    </tr>
+  </thead>
+  <tbody>
+  </tbody>
+</table></details></section>
+<section class="card notes"><h2>Data notes</h2><p>Four problems could distort the repeat rate. These are future-dated orders, duplicate order IDs, orders with no customer, and 999-item style orders. Date-order errors need a quick decision. Duplicate emails may mean duplicate customer accounts, and that needs a decision because it affects who counts as a repeat customer. The two spelling flags are false alarms, and neither field is used in this brief.</p><p><b>Period:</b> 2023-10-01 to 2025-09-30.</p>
+<p><b>Decisions assumed:</b></p><ul><li>Same email = same person? Recommended: No. Treat each user id as one customer and do not merge accounts. The dashboard shows how many customers share an email as a caveat. If you tell us the same email is the same person, we will merge accounts, use the earliest completed order across them and the channel of the earliest account.</li><li>Window &#x27;last 2 years&#x27;: first orders from 2023-10-01 to 2025-09-30 (24 cohorts), the latest cohorts with a full 12 months of follow-up.</li><li>12-month rule: 12 calendar months from the first order&#x27;s timestamp (first created_at + 12 months), not 365 days. Needs your sign-off.</li><li>Second purchase: a different Complete order_id with a strictly later created_at than the first. Items in the same order do not count. Orders with the same timestamp do not count.</li><li>Channel is the single signup channel stored on the customer record (users.traffic_source), labelled &#x27;Signup channel&#x27;. It may not be the channel that led to the first purchase.</li><li>Small groups: cohorts under 30 customers are flagged but still shown. A pooled quarterly view and a 24-month total per channel are offered, built from added-up counts. The threshold of 30 is our suggestion.</li><li>Audience assumed to be the marketing lead or budget owner.</li><li>Order status is the current status. Recent Shipped or Processing orders may still turn Complete, so the latest cohorts may be slightly understated.</li><li>Future-dated orders (2027-2028), orders with no customer and duplicate order IDs are removed as per the audit&#x27;s proposed rules. The removed counts are shown on the dashboard.</li><li>Spend and value for money by channel cannot be shown. The data has no marketing spend. Organic is also not a paid channel.</li></ul></section>
+</main></body></html>

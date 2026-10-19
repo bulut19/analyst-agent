@@ -1,0 +1,65 @@
+# Interview: merchandising
+
+**Request:** Which products should we stop selling?
+
+**Hidden need (what the simulator knew):** You want a list of discontinuation candidates: products in the bottom 10% by units sold in the last 12 months that also have a margin below 20%, grouped by category. You want to see units sold, revenue and margin for each. This feeds your next season's buying plan.
+
+## Questions asked
+
+**Q1:** When you say "stop selling," what makes a product a bad one to keep? For example: (a) it makes little profit, (b) it sells very few units, or (c) it gets returned a lot. Which matters most to you?
+*Why:* Resolves the decision criterion/KPI for "should stop selling" — profitability vs volume vs returns. Highest priority since it defines the core metric.
+**A:** Mainly low sales volume combined with thin margin. A product has to be in the bottom 10% by units sold and have a margin under 20% to make the cut. I'm not focused on returns for this list.
+
+**Q2:** Over what period should we measure units sold? For example: (a) the last 12 months, (b) the last 24 months, or (c) all time since the product was first sold. Note that new products may look weak just because they are new.
+*Why:* Time window for units sold and margin; also surfaces handling of newly launched products.
+**A:** Last 12 months, option (a). That's the window I need for the list.
+
+**Q3:** Who will use this list, and what will they do with it? For example: (a) merchandising team deciding what to drop from the catalogue, (b) leadership reviewing the shortlist, or (c) someone else?
+*Why:* Audience and decision supported; determines level of detail and filters.
+**A:** My merchandising team will use it to decide what to drop from the catalogue for next season's buying plan. I'll review the final shortlist before anything is cut.
+
+**Q4:** Should the "bottom 10% by units sold" be measured across all products together, or within each category (for example, within Jeans, within Tops)? Measuring across everything would mostly flag cheap or niche categories.
+*Why:* Defines the percentile cohort, which materially changes which products are flagged.
+**A:** Within each category, please. The list is grouped by category, and I don't want cheap or niche categories crowding out the rest.
+
+---
+
+# Requirements Brief
+
+**Business question:** Which products are in the bottom 10% of units sold within their category and have a margin under 20%, based on the last 12 months?
+
+**Audience:** Merchandising team (users). The requester reviews the final shortlist before any product is cut.
+
+**Decision it supports:** Which products to drop from the catalogue for next season's buying plan.
+
+## KPIs
+
+| KPI | Definition |
+|---|---|
+| Units sold (last 12 months) | Number of items of the product sold in the last 12 months. Cancelled orders are excluded. Returned items are still counted as sold (returns are not a focus of this list). This is an assumption to approve. |
+| Margin % | (Revenue minus product cost) divided by revenue, for the product over the last 12 months. Revenue is the price the items actually sold at, excluding cancelled orders. Cost is the product cost on file. This is an assumption to approve. |
+| Units-sold percentile within category | The product's rank by units sold among all products in the same category, over the last 12 months. A product is in the bottom 10% if it ranks at or below the 10th percentile of its category. |
+| Stop-selling candidate flag | A product is flagged if it is in the bottom 10% of units sold in its category AND its margin is under 20%. Both conditions must be true. |
+| Number of candidates per category | Count of flagged products in each category, to help size the shortlist. |
+
+## Scope
+
+- **Breakdowns:** Category, Product, Brand, Department
+- **Filters:** Category, Brand, Department
+- **Time range:** Last 12 months, rolling, ending at the latest data available (September 2026).
+- **Comparison:** None. Each product is compared with other products in its own category. The 10% cut-off and 20% margin threshold are fixed.
+
+## Assumptions to approve
+
+- Cancelled orders are excluded from units sold and margin. Returned items are counted as sold. Please confirm.
+- Margin uses actual sale price, not list price. Please confirm. The alternative is list price minus cost.
+- Products with zero sales in the last 12 months are included in the category ranking and count as bottom-10% (assuming they were available to sell). Please confirm.
+- Products launched recently (for example, under 12 months ago, or under 3 months ago) may look weak just because they are new. Proposal: mark them as 'new' on the list instead of excluding them. Please confirm.
+- Ties in units sold at the 10% cut-off are all included in the bottom 10%.
+- Categories with very few products may give a tiny or empty bottom 10%. They are shown as they are, with no minimum size rule.
+- The dashboard shows a list for review only. It does not make the final decision to cut.
+
+## Out of scope
+
+- Returns and return rates were deliberately excluded by the requester, so they are not used to flag products.
+- The data has no stock levels, supplier terms or future demand. The dashboard cannot say whether a product is needed for the next season's buying plan, only how it performed in the past 12 months.

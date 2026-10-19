@@ -1,0 +1,112 @@
+{
+ "summary": "Three real issues: duplicate customer emails, and shipped, delivered and returned dates that come before the order date. Duplicate emails could inflate customer counts. The date errors matter most for returns timing and delivery reporting. The two spelling findings are false alarms, because Kagawa and Austria are real places.",
+ "issues": [
+  {
+   "finding_id": 1,
+   "verdict": "real_issue",
+   "severity": "medium",
+   "kpis_affected": [
+    "Customer count",
+    "Active customers",
+    "Repeat purchase rate",
+    "Customer lifetime value"
+   ],
+   "explanation": "About 25,500 customer rows share an email with another row. The same person may have several customer records. If we count customer IDs, we overstate the number of customers and understate repeat buying. It could also be a sample-data artifact, where different people share a generated email. We need to confirm which.",
+   "proposed_rule": "Do not change the data yet. Check whether duplicate-email rows are the same person (same name, birth date, location) or different people. If same person, build a person key on normalised (lowercased, trimmed) email and count distinct person keys for customer metrics. If different people, keep customer ID as the key.",
+   "needs_decision": true,
+   "decision_question": "Should one email address count as one customer, even if it has several customer IDs?",
+   "check": "duplicate_value",
+   "table": "users",
+   "column": "email",
+   "rule": "email should be unique per row",
+   "rows_affected": 25534
+  },
+  {
+   "finding_id": 2,
+   "verdict": "real_issue",
+   "severity": "medium",
+   "kpis_affected": [
+    "Fulfilment time",
+    "Shipping time",
+    "Delivery time"
+   ],
+   "explanation": "About 33,800 order items show a ship date before the order was placed. That is impossible. Any average time-to-ship or time-to-deliver will be skewed, with negative values pulling the average down. Revenue totals are not affected because they do not use this date.",
+   "proposed_rule": "Exclude order items where shipped_at < created_at from time-to-ship calculations only. Keep them in revenue and order counts. Report the number excluded next to the metric.",
+   "needs_decision": false,
+   "decision_question": "",
+   "check": "date_order",
+   "table": "order_items",
+   "column": "created_at, shipped_at",
+   "rule": "shipped_at must not be before created_at",
+   "rows_affected": 33766
+  },
+  {
+   "finding_id": 3,
+   "verdict": "real_issue",
+   "severity": "medium",
+   "kpis_affected": [
+    "Delivery time",
+    "On-time delivery rate"
+   ],
+   "explanation": "About 5,800 order items were delivered before they were ordered. That is impossible, so delivery-time averages would be wrong. Revenue is not affected.",
+   "proposed_rule": "Exclude order items where delivered_at < created_at (or delivered_at < shipped_at) from delivery-time calculations only. Keep them in revenue and order counts.",
+   "needs_decision": false,
+   "decision_question": "",
+   "check": "date_order",
+   "table": "order_items",
+   "column": "created_at, delivered_at",
+   "rule": "delivered_at must not be before created_at",
+   "rows_affected": 5761
+  },
+  {
+   "finding_id": 4,
+   "verdict": "real_issue",
+   "severity": "medium",
+   "kpis_affected": [
+    "Return rate",
+    "Returns by month",
+    "Net revenue",
+    "Days to return"
+   ],
+   "explanation": "637 items were returned before they were ordered. That is impossible. If returns are grouped by return date, they land in the wrong month, and days-to-return goes negative. The return flag itself is probably still valid, so return counts by order date are likely fine.",
+   "proposed_rule": "Keep these rows in return-rate counts, grouped by order date (created_at). Exclude rows where returned_at < created_at from days-to-return calculations. Do not group returns by returned_at until the dates are fixed.",
+   "needs_decision": true,
+   "decision_question": "Should returns be reported by the month of the original order or by the month the item came back?",
+   "check": "date_order",
+   "table": "order_items",
+   "column": "created_at, returned_at",
+   "rule": "returned_at must not be before created_at",
+   "rows_affected": 637
+  },
+  {
+   "finding_id": 5,
+   "verdict": "false_alarm",
+   "severity": "none",
+   "kpis_affected": [],
+   "explanation": "Kagawa and Kanagawa are two different prefectures in Japan. This is not a typo.",
+   "proposed_rule": "none",
+   "needs_decision": false,
+   "decision_question": "",
+   "check": "inconsistent_spelling",
+   "table": "users",
+   "column": "state",
+   "rule": "rare spellings of a common value: 'Kagawa' looks like 'Kanagawa'",
+   "rows_affected": 5
+  },
+  {
+   "finding_id": 6,
+   "verdict": "false_alarm",
+   "severity": "none",
+   "kpis_affected": [],
+   "explanation": "Austria and Australia are two different countries. This is not a typo.",
+   "proposed_rule": "none",
+   "needs_decision": false,
+   "decision_question": "",
+   "check": "inconsistent_spelling",
+   "table": "users",
+   "column": "country",
+   "rule": "rare spellings of a common value: 'Austria' looks like 'Australia'",
+   "rows_affected": 2
+  }
+ ]
+}

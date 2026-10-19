@@ -1,0 +1,120 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1"><title>Which products should we stop selling?</title>
+<style>
+:root { --surface:#fcfcfb; --page:#f9f9f7; --ink:#0b0b0b; --ink2:#52514e; --muted:#898781; --rule:#e1e0d9; }
+body { margin:0; background:var(--page); color:var(--ink); font:15px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif; }
+main { max-width:1040px; margin:0 auto; padding:32px 16px 64px; }
+h1 { font-size:24px; margin:0 0 4px; } .q { color:var(--ink2); margin:0 0 24px; }
+.top { display:grid; grid-template-columns:minmax(220px,1fr) 2fr; gap:16px; margin-bottom:16px; }
+.card { background:var(--surface); border:1px solid var(--rule); border-radius:12px; padding:20px; margin-bottom:16px; }
+.hero .label { color:var(--ink2); font-size:13px; } .hero .value { font-size:48px; font-weight:600; line-height:1.1; margin:6px 0; }
+.hero .ctx { color:var(--ink2); font-size:13px; } h2 { font-size:13px; text-transform:uppercase; letter-spacing:.04em; color:var(--muted); margin:0 0 8px; }
+ul { margin:0; padding-left:20px; } li { margin:4px 0; }
+details { margin-top:8px; } summary { cursor:pointer; color:var(--ink2); font-size:13px; }
+table.data { border-collapse:collapse; font-size:13px; margin-top:8px; font-variant-numeric:tabular-nums; }
+table.data th, table.data td { border-bottom:1px solid var(--rule); padding:4px 12px 4px 0; text-align:left; }
+.notes { color:var(--ink2); font-size:13px; } @media (max-width:720px) { .top { grid-template-columns:1fr; } }
+</style></head><body><main>
+<h1>Which products should we stop selling?</h1><p class="q">Which products meet the discontinuation rule: bottom 10% by units sold over the last 12 months AND margin below 20%?</p>
+<div class="top"><section class="card hero"><div class="label">Products meeting the discontinuation rule</div>
+<div class="value">0</div><div class="ctx">Out of all products with a sale from Oct 2025 to Sep 2026. None is in the bottom 10% by units and under 20% margin.</div></section>
+<section class="card"><h2>Findings</h2><ul><li>No product meets the rule: 0 of <b>24,687</b> products with sales between October 2025 and September 2026 are both in the bottom <b>10%</b> by units and under <b>20%</b> margin.</li><li>The bottom <b>10%</b> cut-off is 1 unit, so every product that sold a single item counts as a low seller because ties are included.</li><li>Among the lowest sellers shown, margins run from <b>33.2%</b> to <b>35.8%</b>, well above the <b>20%</b> limit.</li><li>The lowest margin on the list is <b>33.2%</b>, for the Scrunch Cloth Pants Set / Jacket, still <b>13 points</b> over the limit.</li><li>The lists show only <b>100</b> low-selling products, all with 1 unit, so they are a sample of the full group; the zero count covers all ranked products.</li><li>The data cannot say whether any product should be dropped: stock, supplier terms and future demand are not available, and new launches with short time on sale are included.</li></ul></section></div>
+<section class="card"><div style="height:306px; width:100%;">                        <script>window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
+        <script charset="utf-8" src="https://cdn.plot.ly/plotly-4.1.1.min.js" integrity="sha256-O24V1F27f8pb0glCkelh3cVHLNiHAJ5gCaVtq2aNch8=" crossorigin="anonymous"></script>                <div id="a1409032-ee1a-4e33-9f11-40e451edd52e" class="plotly-graph-div" style="height:100%; width:100%;"></div>            <script>                window.PLOTLYENV=window.PLOTLYENV || {};                                if (document.getElementById("a1409032-ee1a-4e33-9f11-40e451edd52e")) {                    Plotly.newPlot(                        "a1409032-ee1a-4e33-9f11-40e451edd52e",                        [{"cliponaxis":false,"hovertemplate":"%{y}: \u003cb\u003e%{x:.1%}\u003c\u002fb\u003e\u003cextra\u003e\u003c\u002fextra\u003e","marker":{"color":"#2a78d6","cornerradius":4},"orientation":"h","text":{"dtype":"f8","bdata":"AAAA8Hw\u002f1T8AAAD8U+PVPwAAABwEVtY\u002fAAAAPLTI1j8="},"textfont":{"color":"#52514e","size":11},"textposition":"outside","texttemplate":"%{text:.1%}","x":{"dtype":"f8","bdata":"AAAA8Hw\u002f1T8AAAD8U+PVPwAAABwEVtY\u002fAAAAPLTI1j8="},"y":["Scrunch Cloth Pants Set \u002f Jacket - Regular","Calvin Klein Women's MSY Velour Pant","Only Necessities Plus Size Peachskin 3 piece Pantset","Aeropostale Juniors' Times Square 87 Graphic T-Shirt and A87 Racerback Ribbed Tank - Size (Large)"],"type":"bar"}],                        {"template":{"data":{"scatter":[{"type":"scatter"}]}},"xaxis":{"range":[0,0.40584000281989574],"tickfont":{"color":"#898781","size":11},"title":{"font":{"color":"#52514e","size":12},"text":"Margin (%)","standoff":8},"tickformat":".0%","gridcolor":"#e1e0d9","gridwidth":1,"zeroline":true,"zerolinecolor":"#c3c2b7","automargin":true,"ticksuffix":""},"shapes":[{"line":{"color":"#52514e","dash":"dot","width":1},"type":"line","x0":0.2,"x1":0.2,"xref":"x","y0":0,"y1":1,"yref":"y domain"}],"font":{"family":"system-ui, -apple-system, \"Segoe UI\", sans-serif","color":"#0b0b0b","size":12},"title":{"font":{"size":15},"text":"\u003cb\u003eLowest-margin low sellers still clear 20% by a wide gap\u003c\u002fb\u003e\u003cbr\u003e\u003cspan style='font-size:12px;color:#52514e'\u003eMargin % for Clothing Sets products sold once, Oct 2025 to Sep 2026. Returns not removed. Dotted line: 20% margin limit.\u003c\u002fspan\u003e","x":0,"xanchor":"left"},"legend":{"font":{"color":"#52514e","size":11},"orientation":"h","y":-0.22,"x":0},"margin":{"l":10,"r":40,"t":70,"b":50},"hoverlabel":{"font":{"color":"#0b0b0b","family":"system-ui, -apple-system, \"Segoe UI\", sans-serif"},"bgcolor":"white","bordercolor":"#e1e0d9"},"yaxis":{"tickfont":{"color":"#52514e","size":11},"title":{"font":{"color":"#52514e","size":12},"text":"Product","standoff":8},"showgrid":false,"linecolor":"#c3c2b7","automargin":true},"paper_bgcolor":"#fcfcfb","plot_bgcolor":"#fcfcfb","showlegend":false,"bargap":0.35,"bargroupgap":0.08,"height":306},                        {"displayModeBar": false, "responsive": true}                    )                };            </script>        </div><details><summary>Table view</summary><table class="dataframe data">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Product</th>
+      <th>Margin (%)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Aeropostale Juniors' Times Square 87 Graphic T-Shirt and A87 Racerback Ribbed Tank - Size (Large)</td>
+      <td>35.6%</td>
+    </tr>
+    <tr>
+      <td>Only Necessities Plus Size Peachskin 3 piece Pantset</td>
+      <td>34.9%</td>
+    </tr>
+    <tr>
+      <td>Calvin Klein Women's MSY Velour Pant</td>
+      <td>34.2%</td>
+    </tr>
+    <tr>
+      <td>Scrunch Cloth Pants Set / Jacket - Regular</td>
+      <td>33.2%</td>
+    </tr>
+  </tbody>
+</table></details></section><section class="card"><div style="height:680px; width:100%;">                            <div id="37b0dd83-58e0-4d0c-9ffd-d5c07a447a5e" class="plotly-graph-div" style="height:100%; width:100%;"></div>            <script>                window.PLOTLYENV=window.PLOTLYENV || {};                                if (document.getElementById("37b0dd83-58e0-4d0c-9ffd-d5c07a447a5e")) {                    Plotly.newPlot(                        "37b0dd83-58e0-4d0c-9ffd-d5c07a447a5e",                        [{"cliponaxis":false,"hovertemplate":"%{y}: \u003cb\u003e%{x:$,.0f}\u003c\u002fb\u003e\u003cextra\u003e\u003c\u002fextra\u003e","marker":{"color":"#2a78d6","cornerradius":4},"orientation":"h","text":{"dtype":"f8","bdata":"AAAAAABgUUCPwvUoXH9RQAAAAAAAgFJAAAAAAADAWEAAAAAAAEBaQAAAAAAAgFtAzczMzMz8XUBmZmZmZqZeQHE9Ctej4F9AcT0K16PgX0AAAAAAAIBhQNejcD0Kr2FAUrgehesRZkAAAAAAAGBoQPYoXI\u002fC\u002fWhA"},"textfont":{"color":"#52514e","size":11},"textposition":"outside","texttemplate":"%{text:$,.0f}","x":{"dtype":"f8","bdata":"AAAAAABgUUCPwvUoXH9RQAAAAAAAgFJAAAAAAADAWEAAAAAAAEBaQAAAAAAAgFtAzczMzMz8XUBmZmZmZqZeQHE9Ctej4F9AcT0K16PgX0AAAAAAAIBhQNejcD0Kr2FAUrgehesRZkAAAAAAAGBoQPYoXI\u002fC\u002fWhA"},"y":["Men's Polo by Ralph Lauren Swimming Trunks Bathing Suit Yellow with Navy Pony","Solid Zero Twist Terry Loop Women's Bathrobe 100% Cotton Terry Cloth Short Fuchsia One Size","Calvin Klein Men's Voltage Stripe Drawstring Swim Short","WICKING COOL-JAMS 3-PIECE JILLIAN PAJAMA SET FOR TRAVEL AND HOT NIGHTS","parke & ronen Men's Microfiber Print Swim Short","Smartwool Toe Sock Micro","Le Suit Women's Grasslands Floral Jacket Dress Set Black","Evan Picone Water Color Pant Suit - 2 Piece","Evan Picone Coral Bay Skirt Suit","Le Suit Safari Nights Skirt Suit","Natori Women's Aphrodite Robe","David Lerner Women's Welt Pocket Leggings","Tahari Michael Three Quarter Sleeve Pant Suit","Robbi & Nikki Women's Blocked Ponte Legging","Kasper Marthas Vineyard 3 Piece Pant Suit"],"type":"bar"}],                        {"template":{"data":{"scatter":[{"type":"scatter"}]}},"xaxis":{"range":[0,227.92020000000002],"tickfont":{"color":"#898781","size":11},"title":{"font":{"color":"#52514e","size":12},"text":"Revenue ($)","standoff":8},"tickformat":"$,.0f","gridcolor":"#e1e0d9","gridwidth":1,"zeroline":true,"zerolinecolor":"#c3c2b7","automargin":true,"ticksuffix":""},"font":{"family":"system-ui, -apple-system, \"Segoe UI\", sans-serif","color":"#0b0b0b","size":12},"title":{"font":{"size":15},"text":"\u003cb\u003eSome one-unit products still bring in $100 or more\u003c\u002fb\u003e\u003cbr\u003e\u003cspan style='font-size:12px;color:#52514e'\u003eRevenue for the 15 highest earners among the lowest-selling products listed, Oct 2025 to Sep 2026. Returns not removed.\u003c\u002fspan\u003e","x":0,"xanchor":"left"},"legend":{"font":{"color":"#52514e","size":11},"orientation":"h","y":-0.22,"x":0},"margin":{"l":10,"r":40,"t":70,"b":50},"hoverlabel":{"font":{"color":"#0b0b0b","family":"system-ui, -apple-system, \"Segoe UI\", sans-serif"},"bgcolor":"white","bordercolor":"#e1e0d9"},"yaxis":{"tickfont":{"color":"#52514e","size":11},"title":{"font":{"color":"#52514e","size":12},"text":"Product","standoff":8},"showgrid":false,"linecolor":"#c3c2b7","automargin":true},"paper_bgcolor":"#fcfcfb","plot_bgcolor":"#fcfcfb","showlegend":false,"bargap":0.35,"bargroupgap":0.08,"height":680},                        {"displayModeBar": false, "responsive": true}                    )                };            </script>        </div><details><summary>Table view</summary><table class="dataframe data">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Product</th>
+      <th>Revenue ($)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Kasper Marthas Vineyard 3 Piece Pant Suit</td>
+      <td>199.93</td>
+    </tr>
+    <tr>
+      <td>Robbi &amp; Nikki Women's Blocked Ponte Legging</td>
+      <td>195.00</td>
+    </tr>
+    <tr>
+      <td>Tahari Michael Three Quarter Sleeve Pant Suit</td>
+      <td>176.56</td>
+    </tr>
+    <tr>
+      <td>David Lerner Women's Welt Pocket Leggings</td>
+      <td>141.47</td>
+    </tr>
+    <tr>
+      <td>Natori Women's Aphrodite Robe</td>
+      <td>140.00</td>
+    </tr>
+    <tr>
+      <td>Le Suit Safari Nights Skirt Suit</td>
+      <td>127.51</td>
+    </tr>
+    <tr>
+      <td>Evan Picone Coral Bay Skirt Suit</td>
+      <td>127.51</td>
+    </tr>
+    <tr>
+      <td>Evan Picone Water Color Pant Suit - 2 Piece</td>
+      <td>122.60</td>
+    </tr>
+    <tr>
+      <td>Le Suit Women's Grasslands Floral Jacket Dress Set Black</td>
+      <td>119.95</td>
+    </tr>
+    <tr>
+      <td>Smartwool Toe Sock Micro</td>
+      <td>110.00</td>
+    </tr>
+    <tr>
+      <td>parke &amp; ronen Men's Microfiber Print Swim Short</td>
+      <td>105.00</td>
+    </tr>
+    <tr>
+      <td>WICKING COOL-JAMS 3-PIECE JILLIAN PAJAMA SET FOR TRAVEL AND HOT NIGHTS</td>
+      <td>99.00</td>
+    </tr>
+    <tr>
+      <td>Calvin Klein Men's Voltage Stripe Drawstring Swim Short</td>
+      <td>74.00</td>
+    </tr>
+    <tr>
+      <td>Solid Zero Twist Terry Loop Women's Bathrobe 100% Cotton Terry Cloth Short Fuchsia One Size</td>
+      <td>69.99</td>
+    </tr>
+    <tr>
+      <td>Men's Polo by Ralph Lauren Swimming Trunks Bathing Suit Yellow with Navy Pony</td>
+      <td>69.50</td>
+    </tr>
+  </tbody>
+</table></details></section>
+<section class="card notes"><h2>Data notes</h2><p>Three findings are real and touch the discontinuation rule: bad sale prices, order items pointing to products that don&#x27;t exist, and inconsistent category spellings. Three findings (shipping, delivery and return dates out of order) are timestamp noise. None of those dates is used by the brief, so they don&#x27;t affect the numbers. Two decisions are needed from the stakeholder: how to treat zero or negative prices, and how to treat the unmatched product IDs.</p><p><b>Period:</b> 2025-10-01 to 2026-09-30.</p>
+<p><b>Decisions assumed:</b></p><ul><li>Items with sale_price &lt;= 0 are treated as data errors or non-sales and excluded from all KPIs, with a check table listing them (audit decision, recommended option).</li><li>Items pointing to product ids missing from products (30001 to 30005) are excluded and noted on the dashboard with their count and revenue. We assume the product team cannot supply them (audit decision, recommended option).</li><li>Cancelled items are excluded from units and revenue. Returned items stay in, as requested.</li><li>Shipped and Processing items count as sold, along with Complete and Returned. Please confirm, since some late September items may not be final.</li><li>Margin % uses actual sale price and current product cost, not list price.</li><li>The bottom 10% is ranked across all products with at least one sale, not within each category.</li><li>Products with zero sales in the window are excluded from the ranking and not shown. The data has no flag for whether a product was still on offer.</li><li>New launches are included on the same basis as other products. The data has no launch date, so we cannot mark them. A first-order-date proxy is possible if you want an exclusion.</li><li>&#x27;Last 12 months&#x27; is 2025-10-01 to 2026-09-30. We assume September 2026 is complete, because the last order is at 23:59 on 30 September. October 2026 items are excluded.</li><li>Ties at the cut-off are all included (units &lt;= cut-off). The cut-off is calculated with PERCENTILE_CONT(0.1). The share flagged is shown so you can check whether ties make the list too large.</li><li>Margin below 20% means strictly below, on the unrounded value. Negative margins qualify.</li><li>A product with no sales gets no margin and no flag, and is not shown as 0% or as a candidate. Products with no sales are shown nowhere.</li><li>Overlapping categories (Socks vs Socks &amp; Hosiery, Pants vs Pants &amp; Capris, Suits vs Suits &amp; Sport Coats) stay as separate groups until the team approves a merge. Obvious typos are fixed.</li><li>Tables are limited to 100 rows, lowest units first then lowest margin, to keep them readable. Candidates only is the default view.</li><li>Months are cut in UTC time, not local business time.</li><li>Shipping, delivery and return dates are not used because the audit found them unreliable.</li></ul></section>
+</main></body></html>

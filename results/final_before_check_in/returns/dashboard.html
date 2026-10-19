@@ -1,0 +1,209 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1"><title>Returns are killing us. I need to see what&#x27;s going on.</title>
+<style>
+:root { --surface:#fcfcfb; --page:#f9f9f7; --ink:#0b0b0b; --ink2:#52514e; --muted:#898781; --rule:#e1e0d9; }
+body { margin:0; background:var(--page); color:var(--ink); font:15px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif; }
+main { max-width:1040px; margin:0 auto; padding:32px 16px 64px; }
+h1 { font-size:24px; margin:0 0 4px; } .q { color:var(--ink2); margin:0 0 24px; }
+.top { display:grid; grid-template-columns:minmax(220px,1fr) 2fr; gap:16px; margin-bottom:16px; }
+.card { background:var(--surface); border:1px solid var(--rule); border-radius:12px; padding:20px; margin-bottom:16px; }
+.hero .label { color:var(--ink2); font-size:13px; } .hero .value { font-size:48px; font-weight:600; line-height:1.1; margin:6px 0; }
+.hero .ctx { color:var(--ink2); font-size:13px; } h2 { font-size:13px; text-transform:uppercase; letter-spacing:.04em; color:var(--muted); margin:0 0 8px; }
+ul { margin:0; padding-left:20px; } li { margin:4px 0; }
+details { margin-top:8px; } summary { cursor:pointer; color:var(--ink2); font-size:13px; }
+table.data { border-collapse:collapse; font-size:13px; margin-top:8px; font-variant-numeric:tabular-nums; }
+table.data th, table.data td { border-bottom:1px solid var(--rule); padding:4px 12px 4px 0; text-align:left; }
+.notes { color:var(--ink2); font-size:13px; } @media (max-width:720px) { .top { grid-template-columns:1fr; } }
+</style></head><body><main>
+<h1>Returns are killing us. I need to see what&#x27;s going on.</h1><p class="q">Which product categories and brands have the highest return rates over the last 12 months, and how is the rate changing month by month?</p>
+<div class="top"><section class="card hero"><div class="label">Company return rate, Oct 2025 to Sep 2026</div>
+<div class="value">28.2%</div><div class="ctx">Returned items ÷ (delivered + returned items). Cancelled items left out.</div></section>
+<section class="card"><h2>Findings</h2><ul><li>Suits &amp; Sport Coats have the highest return rate at <b>31.4%</b> (<b>208</b> of <b>663</b> items), against a company rate of <b>28.2%</b>.</li><li>Socks (<b>30.7%</b>), Outerwear &amp; Coats (<b>30.3%</b>) and Jeans (<b>30.3%</b>) come next, and Jeans stand out for volume with <b>477</b> items returned.</li><li>Twelve of the <b>15</b> categories shown are above the company rate, but most by only 1 to <b>3 points</b>, so the gaps between categories are small.</li><li>Only one brand, Allegra K, sold enough items (<b>762</b>) to pass the <b>500</b>-item cut-off, and its rate is <b>28.1%</b>, so the data cannot rank brands for supplier reviews. Supplier is also not in the data, so brand is only a stand-in.</li><li>The monthly rate ranged from <b>25.2%</b> in July 2026 to <b>30.8%</b> in November 2025 and shows no steady rise or fall; September 2026 was <b>29.1%</b>.</li><li>Recent months may be understated, because items ordered lately can still be returned. Look-alike categories such as Socks and Socks &amp; Hosiery are kept separate.</li></ul></section></div>
+<section class="card"><div style="height:680px; width:100%;">                        <script>window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
+        <script charset="utf-8" src="https://cdn.plot.ly/plotly-4.1.1.min.js" integrity="sha256-O24V1F27f8pb0glCkelh3cVHLNiHAJ5gCaVtq2aNch8=" crossorigin="anonymous"></script>                <div id="508c10fd-2361-4365-a440-18805e16bcea" class="plotly-graph-div" style="height:100%; width:100%;"></div>            <script>                window.PLOTLYENV=window.PLOTLYENV || {};                                if (document.getElementById("508c10fd-2361-4365-a440-18805e16bcea")) {                    Plotly.newPlot(                        "508c10fd-2361-4365-a440-18805e16bcea",                        [{"cliponaxis":false,"hovertemplate":"%{y}: \u003cb\u003e%{x:.1%}\u003c\u002fb\u003e\u003cextra\u003e\u003c\u002fextra\u003e","marker":{"color":"#2a78d6","cornerradius":4},"orientation":"h","text":{"dtype":"f8","bdata":"5Faej\u002fBS0T+IINOnRNbRP+RgEzc+2dE\u002fXQCqnQkZ0j\u002fT1eqnTSHSP4zIeBEZL9I\u002f8YrJLJiT0j84+LmJ15PSP5wUWasu0tI\u002fGyMF7r7j0j93jo+VNizTP4ec++wCYtM\u002fRuKCmSZp0z+V6i7WKqLTPxQUFBQUFNQ\u002f"},"textfont":{"color":"#52514e","size":11},"textposition":"outside","texttemplate":"%{text:.1%}","x":{"dtype":"f8","bdata":"5Faej\u002fBS0T+IINOnRNbRP+RgEzc+2dE\u002fXQCqnQkZ0j\u002fT1eqnTSHSP4zIeBEZL9I\u002f8YrJLJiT0j84+LmJ15PSP5wUWasu0tI\u002fGyMF7r7j0j93jo+VNizTP4ec++wCYtM\u002fRuKCmSZp0z+V6i7WKqLTPxQUFBQUFNQ\u002f"},"y":["Swim","Active","Socks & Hosiery","Shorts","Intimates","Sweaters","Pants & Capris","Maternity","Fashion Hoodies & Sweatshirts","Accessories","Pants","Jeans","Outerwear & Coats","Socks","Suits & Sport Coats"],"type":"bar"}],                        {"template":{"data":{"scatter":[{"type":"scatter"}]}},"xaxis":{"range":[0,0.35764705882352943],"tickfont":{"color":"#898781","size":11},"title":{"font":{"color":"#52514e","size":12},"text":"Return rate (%)","standoff":8},"tickformat":".0%","gridcolor":"#e1e0d9","gridwidth":1,"zeroline":true,"zerolinecolor":"#c3c2b7","automargin":true,"ticksuffix":""},"shapes":[{"line":{"color":"#52514e","dash":"dot","width":1},"type":"line","x0":0.2825,"x1":0.2825,"xref":"x","y0":0,"y1":1,"yref":"y domain"}],"font":{"family":"system-ui, -apple-system, \"Segoe UI\", sans-serif","color":"#0b0b0b","size":12},"title":{"font":{"size":15},"text":"\u003cb\u003eSuits, socks, coats and jeans return most often\u003c\u002fb\u003e\u003cbr\u003e\u003cspan style='font-size:12px;color:#52514e'\u003eReturn rate by product category, Oct 2025 to Sep 2026. Categories with 500+ items sold, top 15. Dotted line: company average 28.2%.\u003c\u002fspan\u003e","x":0,"xanchor":"left"},"legend":{"font":{"color":"#52514e","size":11},"orientation":"h","y":-0.22,"x":0},"margin":{"l":10,"r":40,"t":70,"b":50},"hoverlabel":{"font":{"color":"#0b0b0b","family":"system-ui, -apple-system, \"Segoe UI\", sans-serif"},"bgcolor":"white","bordercolor":"#e1e0d9"},"yaxis":{"tickfont":{"color":"#52514e","size":11},"title":{"font":{"color":"#52514e","size":12},"text":"Product category","standoff":8},"showgrid":false,"linecolor":"#c3c2b7","automargin":true},"paper_bgcolor":"#fcfcfb","plot_bgcolor":"#fcfcfb","showlegend":false,"bargap":0.35,"bargroupgap":0.08,"height":680},                        {"displayModeBar": false, "responsive": true}                    )                };            </script>        </div><details><summary>Table view</summary><table class="dataframe data">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Product category</th>
+      <th>Return rate (%)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Suits &amp; Sport Coats</td>
+      <td>31.4%</td>
+    </tr>
+    <tr>
+      <td>Socks</td>
+      <td>30.7%</td>
+    </tr>
+    <tr>
+      <td>Outerwear &amp; Coats</td>
+      <td>30.3%</td>
+    </tr>
+    <tr>
+      <td>Jeans</td>
+      <td>30.3%</td>
+    </tr>
+    <tr>
+      <td>Pants</td>
+      <td>30.0%</td>
+    </tr>
+    <tr>
+      <td>Accessories</td>
+      <td>29.5%</td>
+    </tr>
+    <tr>
+      <td>Fashion Hoodies &amp; Sweatshirts</td>
+      <td>29.4%</td>
+    </tr>
+    <tr>
+      <td>Maternity</td>
+      <td>29.0%</td>
+    </tr>
+    <tr>
+      <td>Pants &amp; Capris</td>
+      <td>29.0%</td>
+    </tr>
+    <tr>
+      <td>Sweaters</td>
+      <td>28.4%</td>
+    </tr>
+    <tr>
+      <td>Intimates</td>
+      <td>28.3%</td>
+    </tr>
+    <tr>
+      <td>Shorts</td>
+      <td>28.3%</td>
+    </tr>
+    <tr>
+      <td>Socks &amp; Hosiery</td>
+      <td>27.9%</td>
+    </tr>
+    <tr>
+      <td>Active</td>
+      <td>27.9%</td>
+    </tr>
+    <tr>
+      <td>Swim</td>
+      <td>27.1%</td>
+    </tr>
+  </tbody>
+</table></details></section><section class="card"><div style="height:430px; width:100%;">                            <div id="ece9c9a4-cf51-40ec-a0a2-e1beabae4c0e" class="plotly-graph-div" style="height:100%; width:100%;"></div>            <script>                window.PLOTLYENV=window.PLOTLYENV || {};                                if (document.getElementById("ece9c9a4-cf51-40ec-a0a2-e1beabae4c0e")) {                    Plotly.newPlot(                        "ece9c9a4-cf51-40ec-a0a2-e1beabae4c0e",                        [{"hovertemplate":"\u003cb\u003e%{y:.1%}\u003c\u002fb\u003e  \u003cextra\u003e\u003c\u002fextra\u003e","line":{"color":"#2a78d6","shape":"linear","width":2},"marker":{"color":"#2a78d6","line":{"color":"#fcfcfb","width":2},"size":6},"mode":"lines+markers","name":"return_rate","x":["2025-10","2025-11","2025-12","2026-01","2026-02","2026-03","2026-04","2026-05","2026-06","2026-07","2026-08","2026-09"],"y":{"dtype":"f8","bdata":"uW62peL+0j\u002fCCN8\u002fxLPTP2aJBAutf9E\u002fqWceV6\u002f\u002f0T+bmG4PDvbRP\u002fJqitKXxtE\u002fPHxLDW4r0j8ouKFp3X7SP4SDg4ODg9M\u002fcAIncAIn0D+glAy\u002fGfjQP+6rtVOQoNI\u002f"},"type":"scatter"}],                        {"template":{"data":{"scatter":[{"type":"scatter"}]}},"hovermode":"x unified","font":{"family":"system-ui, -apple-system, \"Segoe UI\", sans-serif","color":"#0b0b0b","size":12},"title":{"font":{"size":15},"text":"\u003cb\u003eMonthly return rate moves up and down, with no clear trend\u003c\u002fb\u003e\u003cbr\u003e\u003cspan style='font-size:12px;color:#52514e'\u003eReturn rate by order month, Oct 2025 to Sep 2026. Recent months may still change.\u003c\u002fspan\u003e","x":0,"xanchor":"left"},"legend":{"font":{"color":"#52514e","size":11},"orientation":"h","y":-0.22,"x":0},"margin":{"l":10,"r":40,"t":70,"b":50},"hoverlabel":{"font":{"color":"#0b0b0b","family":"system-ui, -apple-system, \"Segoe UI\", sans-serif"},"bgcolor":"white","bordercolor":"#e1e0d9"},"xaxis":{"tickfont":{"color":"#52514e","size":11},"title":{"font":{"color":"#52514e","size":12},"text":"Order month","standoff":8},"showgrid":false,"linecolor":"#c3c2b7","automargin":true},"yaxis":{"tickfont":{"color":"#898781","size":11},"title":{"font":{"color":"#52514e","size":12},"text":"Return rate (%)","standoff":8},"tickformat":".0%","gridcolor":"#e1e0d9","gridwidth":1,"zeroline":true,"zerolinecolor":"#c3c2b7","automargin":true,"ticksuffix":""},"paper_bgcolor":"#fcfcfb","plot_bgcolor":"#fcfcfb","showlegend":false,"bargap":0.35,"bargroupgap":0.08,"height":430},                        {"displayModeBar": false, "responsive": true}                    )                };            </script>        </div><details><summary>Table view</summary><table class="dataframe data">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Order month</th>
+      <th>Return rate (%)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>2025-10</td>
+      <td>29.7%</td>
+    </tr>
+    <tr>
+      <td>2025-11</td>
+      <td>30.8%</td>
+    </tr>
+    <tr>
+      <td>2025-12</td>
+      <td>27.3%</td>
+    </tr>
+    <tr>
+      <td>2026-01</td>
+      <td>28.1%</td>
+    </tr>
+    <tr>
+      <td>2026-02</td>
+      <td>28.1%</td>
+    </tr>
+    <tr>
+      <td>2026-03</td>
+      <td>27.8%</td>
+    </tr>
+    <tr>
+      <td>2026-04</td>
+      <td>28.4%</td>
+    </tr>
+    <tr>
+      <td>2026-05</td>
+      <td>28.9%</td>
+    </tr>
+    <tr>
+      <td>2026-06</td>
+      <td>30.5%</td>
+    </tr>
+    <tr>
+      <td>2026-07</td>
+      <td>25.2%</td>
+    </tr>
+    <tr>
+      <td>2026-08</td>
+      <td>26.5%</td>
+    </tr>
+    <tr>
+      <td>2026-09</td>
+      <td>29.1%</td>
+    </tr>
+  </tbody>
+</table></details></section><section class="card"><div style="height:430px; width:100%;">                            <div id="eb6552c5-cac6-4b2a-9380-7a58d0ee1460" class="plotly-graph-div" style="height:100%; width:100%;"></div>            <script>                window.PLOTLYENV=window.PLOTLYENV || {};                                if (document.getElementById("eb6552c5-cac6-4b2a-9380-7a58d0ee1460")) {                    Plotly.newPlot(                        "eb6552c5-cac6-4b2a-9380-7a58d0ee1460",                        [{"hovertemplate":"\u003cb\u003e%{y:,.0f}\u003c\u002fb\u003e  \u003cextra\u003e\u003c\u002fextra\u003e","line":{"color":"#2a78d6","shape":"linear","width":2},"marker":{"color":"#2a78d6","line":{"color":"#fcfcfb","width":2},"size":6},"mode":"lines+markers","name":"items_sold","x":["2025-10","2025-11","2025-12","2026-01","2026-02","2026-03","2026-04","2026-05","2026-06","2026-07","2026-08","2026-09"],"y":{"dtype":"i2","bdata":"YgXTBSwGWQbVBd0GxQZ9B\u002fgHBglBChYL"},"type":"scatter"}],                        {"template":{"data":{"scatter":[{"type":"scatter"}]}},"hovermode":"x unified","font":{"family":"system-ui, -apple-system, \"Segoe UI\", sans-serif","color":"#0b0b0b","size":12},"title":{"font":{"size":15},"text":"\u003cb\u003eItems sold have roughly doubled over the year\u003c\u002fb\u003e\u003cbr\u003e\u003cspan style='font-size:12px;color:#52514e'\u003eItems delivered or returned, by order month, Oct 2025 to Sep 2026.\u003c\u002fspan\u003e","x":0,"xanchor":"left"},"legend":{"font":{"color":"#52514e","size":11},"orientation":"h","y":-0.22,"x":0},"margin":{"l":10,"r":40,"t":70,"b":50},"hoverlabel":{"font":{"color":"#0b0b0b","family":"system-ui, -apple-system, \"Segoe UI\", sans-serif"},"bgcolor":"white","bordercolor":"#e1e0d9"},"xaxis":{"tickfont":{"color":"#52514e","size":11},"title":{"font":{"color":"#52514e","size":12},"text":"Order month","standoff":8},"showgrid":false,"linecolor":"#c3c2b7","automargin":true},"yaxis":{"tickfont":{"color":"#898781","size":11},"title":{"font":{"color":"#52514e","size":12},"text":"Items sold","standoff":8},"tickformat":",.0f","gridcolor":"#e1e0d9","gridwidth":1,"zeroline":true,"zerolinecolor":"#c3c2b7","automargin":true,"ticksuffix":""},"paper_bgcolor":"#fcfcfb","plot_bgcolor":"#fcfcfb","showlegend":false,"bargap":0.35,"bargroupgap":0.08,"height":430},                        {"displayModeBar": false, "responsive": true}                    )                };            </script>        </div><details><summary>Table view</summary><table class="dataframe data">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Order month</th>
+      <th>Items sold</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>2025-10</td>
+      <td>1378</td>
+    </tr>
+    <tr>
+      <td>2025-11</td>
+      <td>1491</td>
+    </tr>
+    <tr>
+      <td>2025-12</td>
+      <td>1580</td>
+    </tr>
+    <tr>
+      <td>2026-01</td>
+      <td>1625</td>
+    </tr>
+    <tr>
+      <td>2026-02</td>
+      <td>1493</td>
+    </tr>
+    <tr>
+      <td>2026-03</td>
+      <td>1757</td>
+    </tr>
+    <tr>
+      <td>2026-04</td>
+      <td>1733</td>
+    </tr>
+    <tr>
+      <td>2026-05</td>
+      <td>1917</td>
+    </tr>
+    <tr>
+      <td>2026-06</td>
+      <td>2040</td>
+    </tr>
+    <tr>
+      <td>2026-07</td>
+      <td>2310</td>
+    </tr>
+    <tr>
+      <td>2026-08</td>
+      <td>2625</td>
+    </tr>
+    <tr>
+      <td>2026-09</td>
+      <td>2838</td>
+    </tr>
+  </tbody>
+</table></details></section>
+<section class="card notes"><h2>Data notes</h2><p>The data is usable for the return-rate dashboard once two things are fixed. First, merge 5 misspelled category names. Second, handle 5 order items whose product can&#x27;t be found. The odd dates and the few zero or negative prices don&#x27;t change the return-rate counts, because they don&#x27;t use those fields. I suggest we use order date and item status only, and warn the stakeholder that the date fields are unreliable.</p><p><b>Period:</b> 2025-10-01 to 2026-09-30.</p>
+<p><b>Decisions assumed:</b></p><ul><li>Window: Oct 2025 to Sep 2026 (2025-10-01 to 2026-09-30), using Sep 2026 as a full month. This follows the &#x27;12 complete months ending at the data end&#x27; rule. If you prefer to end at Aug 2026, the window becomes Sep 2025 to Aug 2026.</li><li>Month is set by order date (created_at), not return date. The return-date alternative would answer when returns happen, and it would need a different base.</li><li>The 500-item cut-off applies separately to categories and to brands (not brand within category). It uses items sold over the 12 months. It is not applied per month or to the benchmark.</li><li>Items still Processing or Shipped are excluded from both parts of the rate.</li><li>&#x27;Delivered&#x27; is approximated by status &#x27;Complete&#x27; plus &#x27;Returned&#x27;, because the data has no &#x27;Delivered&#x27; status.</li><li>Look-alike category names (Socks / Socks &amp; Hosiery, Pants / Pants &amp; Capris, Suits / Suits &amp; Sport Coats) are kept separate and not merged. Merging would be a guess. Tell me if you want them merged. Either could be under the 500 cut-off on its own.</li><li>Supplier is not in the data. Brand is used as a stand-in. The buying team must match brands to suppliers.</li><li>Brand view shows the top 15 brands by return rate, and category view shows the top 15 categories by return rate, after the 500 cut-off. Change the limit if you want more.</li><li>Items with a null brand are left out of the brand view only. They stay in the category views, the trend and the benchmark.</li><li>The company-wide benchmark responds to the Department filter only. It does not change with the category or brand filter.</li><li>Department filter is included as an optional filter, and it uses the product&#x27;s department, not the customer&#x27;s gender.</li><li>The 5 items whose product does not exist in products are excluded everywhere, so the totals match. The data owner should be asked whether those products were deleted.</li><li>Category typos (JEANS, &#x27;jeans &#x27;, Tops and Tees, Sweater, Accesories) are corrected before grouping.</li><li>The audience is assumed to be you plus the merchandising or buying team who run supplier reviews.</li><li>Recent months are probably understated, because items ordered recently may still be returned. The dashboard will carry a note about this.</li></ul></section>
+</main></body></html>

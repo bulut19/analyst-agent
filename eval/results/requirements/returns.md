@@ -1,0 +1,65 @@
+# Interview: returns
+
+**Request:** Returns are killing us. I need to see what's going on.
+
+**Hidden need (what the simulator knew):** You want the return rate by product category and brand for the last 12 months, with a monthly trend. To you, return rate means returned items divided by items that were delivered or returned (cancelled items do not count). You will use it to decide which categories and brands to review with suppliers. You only care about categories with enough volume to matter.
+
+## Questions asked
+
+**Q1:** What decision will this dashboard help you make? For example: drop or change certain products or brands, fix a problem with sizing or quality, or change which marketing channels you push?
+*Why:* Decision supported is the top priority and is not yet known. It shapes KPIs, breakdowns and audience.
+**A:** We're deciding which categories and brands to review with suppliers, so I need to see where returns are unusually high. I'd focus on categories and brands with enough volume for the numbers to matter.
+
+**Q2:** How should we measure "returns high"? Options: (a) share of items sold that were returned, (b) share of sales dollars that were returned, or (c) share of orders with at least one return. I suggest (a), because suppliers deal in items.
+*Why:* Return rate definition is ambiguous and drives the main KPI.
+**A:** I'd go with (a), since you're right that suppliers think in items. Define it as returned items divided by items delivered or returned, leaving out cancelled items so the denominator isn't inflated.
+
+**Q3:** What counts as "enough volume"? For example, a brand or category needs at least 100 items sold (delivered or returned) in the period to be ranked. Is 100 right, or would you pick another number, like 50 or 500?
+*Why:* Minimum volume threshold is needed to filter out noisy small groups.
+**A:** 100 works for me. It's large enough that one or two returns won't swing a brand's rate. Keep it on delivered plus returned items, so cancelled orders don't count.
+
+**Q4:** What time period should it cover, and what should we compare against? For example: the last 12 months vs. the 12 months before, or the full history by year?
+*Why:* Time range and comparison are still open.
+**A:** Last 12 months is the right window, with a monthly trend so I can see whether any category or brand is getting worse. No need for a year-over-year comparison or full history.
+
+---
+
+# Requirements Brief
+
+**Business question:** Which product categories and brands have unusually high item return rates over the last 12 months, and are any of them getting worse month by month?
+
+**Audience:** The stakeholder and the team that reviews categories and brands with suppliers (assumed: merchandising/buying). Not confirmed.
+
+**Decision it supports:** Choose which categories and brands to take to supplier reviews because their returns are unusually high.
+
+## KPIs
+
+| KPI | Definition |
+|---|---|
+| Item return rate | Returned items divided by items that were delivered or returned. Cancelled items are left out of both the top and the bottom. Measured over the last 12 months, for each category or brand. |
+| Items returned | Count of items marked as returned in the period. |
+| Items sold (delivered or returned) | Count of items that were delivered or returned in the period. Cancelled items are excluded. This is the volume measure. |
+| Gap to company average | A category's or brand's item return rate minus the company-wide item return rate for the same period, in percentage points. Used to show what is 'unusually high'. |
+| Monthly item return rate | Same item return rate, calculated for each month in the last 12 months, per category or brand, to show the trend. |
+
+## Scope
+
+- **Breakdowns:** Product category, Brand, Month (trend)
+- **Filters:** Category, Brand, Minimum volume: at least 100 items delivered or returned in the 12-month window (default on)
+- **Time range:** Last 12 months (a full 12-month window ending at the latest complete month of data), with a monthly trend inside that window.
+- **Comparison:** No year-over-year or full-history comparison. Each category or brand is compared with the company-wide return rate for the same 12 months, and with its own earlier months in the trend.
+
+## Assumptions to approve
+
+- 'Unusually high' means a rate clearly above the company-wide rate. Ranking by gap to the company average is assumed. No fixed cut-off such as +5 points has been agreed.
+- The 100-item minimum applies to the whole 12-month window. In the monthly trend, months with very few items may be noisy. Assumed: show the trend only for categories and brands that pass the 100 threshold.
+- Items are placed in a month by the date they were ordered or shipped, not by the date they were returned. To be confirmed.
+- 'Last 12 months' ends at the latest complete month. The partial current month (September 2026) is excluded. To be confirmed.
+- Brand is treated as the supplier. If one supplier owns several brands, the dashboard cannot group them.
+- Items still in transit or being processed are excluded, as they are neither delivered, returned nor cancelled.
+- Category and brand are shown separately. A combined category-by-brand view is not assumed.
+
+## Out of scope
+
+- Reasons for returns (e.g. wrong size, defective, not as described): the data has no return reason, so the dashboard shows where returns are high but not why.
+- Supplier-level view across several brands: the data has brand, but no supplier field.

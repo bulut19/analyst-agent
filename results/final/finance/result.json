@@ -1,0 +1,32 @@
+{
+ "id": "finance",
+ "questions": 3,
+ "check_ins": 0,
+ "check_in": [],
+ "scores": {
+  "found_real_need": 3,
+  "kpis_unambiguous": 5,
+  "useful_questions": 3,
+  "flagged_data_limits": 5,
+  "approvable_as_written": 3,
+  "comment": "The brief defines its KPIs precisely: revenue excludes cancelled and returned items, it gives a date rule and margin as amount and %, and it is open about its assumptions, data cut-off and what is out of scope. Its main gap is that the analyst never asked how finely to break down time, so the brief only shows quarters when the stakeholder mainly wanted monthly figures, with quarterly totals as an extra, and a manager would send it back for that."
+ },
+ "rubric_avg": 3.8,
+ "metrics": 3,
+ "metrics_ok": 3,
+ "sql_retries": 0,
+ "findings_grounded": true,
+ "dashboard_problems": [],
+ "minutes": 3.8533517797787984,
+ "timings_s": {
+  "interview": 19,
+  "discovery": 25,
+  "audit": 71,
+  "metric_plan": 28,
+  "check_in": 0,
+  "sql": 71,
+  "dashboard": 18
+ },
+ "agent_cost_usd": 0.33039019999999997,
+ "judge_cost_usd": 0.026348000000000003
+}

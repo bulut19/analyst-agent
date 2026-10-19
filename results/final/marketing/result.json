@@ -1,0 +1,41 @@
+{
+ "id": "marketing",
+ "questions": 5,
+ "check_ins": 2,
+ "check_in": [
+  {
+   "question": "If only part of an order was returned, should the whole order be left out? Left out means it can't count as a first order or a second order. Options: Yes, leave out any order with a returned item; No, only leave out orders marked Returned as a whole. I'd suggest: Yes, leave out any order with a returned item, unless you prefer otherwise. (It changes which customers count as new or repeat buyers, so it moves each channel's repeat rate.)",
+   "answer": "No, only leave out orders that were fully returned or cancelled. If someone kept part of an order, they still made a real purchase, so it should count as a first or repeat order."
+  },
+  {
+   "question": "If a customer places two separate orders on the same day, should the second one count as a repeat purchase? Options: No, a repeat must be on a later day; Yes, any second order counts, even on the same day. I'd suggest: No, a repeat must be on a later day, unless you prefer otherwise. (Same-day orders can look like a split basket, not a return visit, so counting them could raise the repeat rate for some channels.)",
+   "answer": "No, a repeat should be on a later day. Two orders on the same day are really one shopping trip, not a customer coming back."
+  }
+ ],
+ "scores": {
+  "found_real_need": 5,
+  "kpis_unambiguous": 4,
+  "useful_questions": 5,
+  "flagged_data_limits": 5,
+  "approvable_as_written": 4,
+  "comment": "Main strength: the brief matches the real need closely. It covers the repeat-purchase decision for next quarter's budget, the CMO audience, the 12-month repeat rate by channel and first-order month, and a clear 24-month window that leaves out customers without 12 months of follow-up. It also says plainly that spend data is missing, monthly counts may be small and channel attribution is assumed. Main gap: a few gaps would stop two analysts getting the same numbers. Partly returned orders are still an open question, the brief doesn't say how to treat a second order on the same day as the first, it doesn't name the five channels, and it doesn't say whether the channel total pools all customers or averages the monthly rates."
+ },
+ "rubric_avg": 4.6,
+ "metrics": 3,
+ "metrics_ok": 3,
+ "sql_retries": 0,
+ "findings_grounded": true,
+ "dashboard_problems": [],
+ "minutes": 4.588723274072011,
+ "timings_s": {
+  "interview": 34,
+  "discovery": 25,
+  "audit": 69,
+  "metric_plan": 35,
+  "check_in": 20,
+  "sql": 78,
+  "dashboard": 13
+ },
+ "agent_cost_usd": 0.4098554,
+ "judge_cost_usd": 0.02642
+}

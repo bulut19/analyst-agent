@@ -1,0 +1,29 @@
+{
+ "id": "finance",
+ "questions": 4,
+ "scores": {
+  "found_real_need": 3,
+  "kpis_unambiguous": 4,
+  "useful_questions": 4,
+  "flagged_data_limits": 5,
+  "approvable_as_written": 3,
+  "comment": "The brief gets the revenue and gross margin definitions right (cancelled and returned items excluded, margin on the same base, revenue counted by order quarter). It also handles the department split, the partial Q3 2026 and the missing targets well. Its biggest gap is the time detail: the stakeholder mainly wanted monthly figures with quarterly totals as a bonus, but the brief only shows quarters. That happened because Q3 offered only quarterly choices. It also drops Q4 2025 from the 2025 data, which needs fixing before sign-off."
+ },
+ "rubric_avg": 3.8,
+ "metrics": 4,
+ "metrics_ok": 4,
+ "sql_retries": 0,
+ "findings_grounded": true,
+ "dashboard_problems": [],
+ "minutes": 3.631125048796336,
+ "timings_s": {
+  "interview": 25,
+  "discovery": 24,
+  "audit": 69,
+  "metric_plan": 30,
+  "sql": 53,
+  "dashboard": 16
+ },
+ "agent_cost_usd": 0.3273162,
+ "judge_cost_usd": 0.024432000000000002
+}

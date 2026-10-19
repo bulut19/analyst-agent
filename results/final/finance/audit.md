@@ -1,0 +1,19 @@
+# Data Quality Audit
+
+Two findings could change the numbers: items with zero or negative prices (1), and items whose product is missing from the product list (2). Both involve only 5 rows, so the effect is small, but they should be excluded and counted. The date-order problems (3, 4, 5) and the category spelling problem (6) are real data errors, but they don't touch any KPI as long as we use the order creation date, item status and department.
+
+## Issues to fix
+
+| Severity | Table.column | Rows | What is wrong | Proposed rule |
+|---|---|---|---|---|
+| medium | `order_items.sale_price` | 5 | Five items have a price of zero or below. A price cannot be negative for a normal sale. Negative values would reduce revenue and margin. A zero price may be a free gift or an error. The amounts are small, but they are wrong for a 'sum of sale prices' measure. | Exclude order items with sale_price <= 0 from Revenue and Gross margin. Log the count and value excluded in the pipeline notes. |
+| medium | `order_items.product_id` | 5 | Five order items point to products that do not exist in the product list (ids 30001-30005). We have no cost and no department for them. Margin cannot be calculated, and they cannot be placed in Men or Women. Including their revenue would break the rule that the total equals Men plus Women. | Exclude order items whose product_id is not found in products.id from all KPIs, so the total equals Men plus Women. Report the number of excluded items and their sale value as a footnote or in the pipeline notes. |
+| low | `order_items.created_at, shipped_at` | 33,766 | About 34,000 items show a ship time before the order was placed. That is impossible, so the timestamps are unreliable. The KPIs do not use ship dates. They use the order creation date, so the numbers are not affected unless the creation date itself is wrong. If it is wrong, a few items near quarter ends could land in the wrong quarter. | Do not use shipped_at in any KPI. Use created_at for quarter assignment. Do not delete these rows. Flag shipped_at as unreliable for any future shipping metric. |
+| low | `order_items.created_at, delivered_at` | 5,761 | About 5,800 items show a delivery time before the order was placed. This is impossible. Delivery dates are not used in this dashboard, so the KPIs are not affected. | Do not use delivered_at in any KPI. Keep the rows. Flag delivered_at as unreliable for any future delivery-time metric. |
+| low | `order_items.created_at, returned_at` | 637 | 637 returned items have a return time before the order time. The dates are wrong, but the KPIs only need to know whether an item was returned, not when. Some samples sit right at a quarter boundary. This could mean the creation date is slightly off, but that cannot be confirmed. | Identify returned items by item status (Returned) only, or returned_at is not null if status is missing. Do not use returned_at timing. Keep these rows excluded as returned. Assign quarter by created_at. |
+| low | `products.category` | 5 | Five products have category names with spelling, case or spacing variants, such as 'jeans ' and 'Accesories'. The dashboard splits by department, not category, so no KPI is affected. It would split category counts if we added a category view later. | Trim spaces, then map variants: JEANS and 'jeans ' to Jeans, 'Tops and Tees' to 'Tops & Tees', Sweater to Sweaters, Accesories to Accessories. Do not change department values. |
+
+## Decisions needed
+
+- **order_items.sale_price:** Are negative or zero prices refunds, adjustments or free gifts? We propose to leave them out of revenue. Do you agree?
+- **order_items.product_id:** These 5 items have no product record, so we cannot show their margin or department. Is it fine to leave them out of all figures? Or can the product list be fixed?

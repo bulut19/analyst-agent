@@ -1,0 +1,31 @@
+{
+ "id": "marketing",
+ "questions": 3,
+ "scores": {
+  "found_real_need": 4,
+  "kpis_unambiguous": 4,
+  "useful_questions": 4,
+  "flagged_data_limits": 5,
+  "approvable_as_written": 4,
+  "comment": "Strength: the brief covers the core need. It names the decision (moving budget next quarter) and defines a clear 12-month repeat purchase rate on completed orders only, with monthly cohorts across the last 2 years. It is also honest about limits, flagging that there is no spend data, that monthly cohorts may be small, and that each customer has a single channel on their record. Gap: the audience was guessed as the marketing lead instead of being asked, and the stakeholder actually reports to the CMO. The 12-month window (365 days or 12 calendar months) and how to treat a second order on the same day are also left open, so two analysts could still get slightly different numbers."
+ },
+ "rubric_avg": 4.2,
+ "metrics": 3,
+ "metrics_ok": 3,
+ "sql_retries": 0,
+ "findings_grounded": true,
+ "dashboard_problems": [
+  "headline: the filter must select exactly one row and the column must exist"
+ ],
+ "minutes": 4.10378231604894,
+ "timings_s": {
+  "interview": 23,
+  "discovery": 29,
+  "audit": 67,
+  "metric_plan": 32,
+  "sql": 66,
+  "dashboard": 29
+ },
+ "agent_cost_usd": 0.376232,
+ "judge_cost_usd": 0.027087999999999994
+}

@@ -1,0 +1,29 @@
+{
+ "id": "repeat_customers",
+ "questions": 4,
+ "scores": {
+  "found_real_need": 3,
+  "kpis_unambiguous": 4,
+  "useful_questions": 3,
+  "flagged_data_limits": 4,
+  "approvable_as_written": 2,
+  "comment": "Strength: the brief gets the KPI exactly right (2 or more non-cancelled orders within 12 months of the first order, grouped by first-order year). It also sees that 2026 cannot be measured and is honest about what the data cannot explain. Gap: the analyst never asked about breakdowns, so the US vs international split by country is missing and is replaced by a long list of unrequested dimensions. The business question also assumes there was a drop, when the stakeholder wants to hear if there wasn't one. And the brief contradicts itself on whether the 2025 group is complete: Q3 and the KPI text say it is, while the assumptions propose limiting it to Jan\u2013Sep first orders."
+ },
+ "rubric_avg": 3.2,
+ "metrics": 4,
+ "metrics_ok": 4,
+ "sql_retries": 0,
+ "findings_grounded": true,
+ "dashboard_problems": [],
+ "minutes": 6.144787621498108,
+ "timings_s": {
+  "interview": 33,
+  "discovery": 45,
+  "audit": 119,
+  "metric_plan": 50,
+  "sql": 104,
+  "dashboard": 18
+ },
+ "agent_cost_usd": 0.48992050000000004,
+ "judge_cost_usd": 0.031236
+}

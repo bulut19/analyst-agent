@@ -1,0 +1,19 @@
+# Data Quality Audit
+
+Three findings are real and touch the discontinuation rule: bad sale prices, order items pointing to products that don't exist, and inconsistent category spellings. Three findings (shipping, delivery and return dates out of order) are timestamp noise. None of those dates is used by the brief, so they don't affect the numbers. Two decisions are needed from the stakeholder: how to treat zero or negative prices, and how to treat the unmatched product IDs.
+
+## Issues to fix
+
+| Severity | Table.column | Rows | What is wrong | Proposed rule |
+|---|---|---|---|---|
+| high | `order_items.sale_price` | 5 | A few items have a zero or negative sale price (e.g. -120). These pull a product's revenue down and can push its margin below 20%, so a product could be wrongly flagged. Only 5 rows, but each one hits a single product's margin directly. A negative price looks like a refund or a data error, and a zero price might be a free giveaway. We can't tell which from the data. | Exclude order items with sale_price <= 0 from Units sold, Revenue and Margin %. List the excluded rows in a separate check table. |
+| medium | `order_items.product_id` | 5 | Five order items point to product IDs (30001 to 30005) that are not in the products table. They have no category, cost or name, so margin can't be worked out. If included, they would show up as nameless products or inflate totals. If dropped silently, units are slightly understated. The count is small, but we don't know whether these are real products missing from the catalogue. | Exclude order items whose product_id is not in products.id from all KPIs. Report the count and the excluded revenue on the dashboard as a data note. |
+| medium | `products.category` | 5 | A handful of products have misspelled or oddly formatted categories (JEANS, 'jeans ' with a trailing space, Sweater, Tops and Tees, Accesories). The dashboard is grouped by category and filtered by category, so these products would appear under separate duplicate categories or drop out of the category filter. The ranking is across all products, so the flag itself is not changed, but they would be shown under the wrong group. | Trim whitespace and map variants to the standard values: JEANS and 'jeans ' to Jeans, Tops and Tees to Tops & Tees, Sweater to Sweaters, Accesories to Accessories. |
+| low | `order_items.created_at, shipped_at` | 33,766 | About 34,000 items have a shipped time before the order was created. This is logically impossible, so the shipping timestamps are unreliable. The brief does not use shipping dates, so no KPI is affected. The time range is based on created_at, which is not part of this issue. It matters only if shipping time is added later. | No cleaning for this dashboard. Do not use shipped_at. Use created_at for the 12-month window. Flag shipping dates as unreliable if they are used in future. |
+| low | `order_items.created_at, delivered_at` | 5,761 | About 5,800 items have a delivered time before the order was created. This is impossible, so the delivery timestamps are unreliable. No KPI in this brief uses delivery dates. | No cleaning for this dashboard. Do not use delivered_at. |
+| low | `order_items.created_at, returned_at` | 637 | About 640 items have a return time before the order was created, which is impossible. Returns are deliberately left out of this dashboard, so there is no impact on the KPIs. It would matter if returns were added later. | No cleaning for this dashboard. Do not use returned_at. |
+
+## Decisions needed
+
+- **order_items.sale_price:** Some items have a zero or negative sale price. Are these errors, refunds or free gifts? Should we exclude them from units sold and revenue, as proposed?
+- **order_items.product_id:** Five sold items refer to products that are missing from the product list. Can the product team supply the missing products, or should we leave these items out and note it?

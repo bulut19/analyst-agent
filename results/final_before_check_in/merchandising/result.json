@@ -1,0 +1,29 @@
+{
+ "id": "merchandising",
+ "questions": 3,
+ "scores": {
+  "found_real_need": 5,
+  "kpis_unambiguous": 4,
+  "useful_questions": 5,
+  "flagged_data_limits": 5,
+  "approvable_as_written": 4,
+  "comment": "The brief captures the full hidden need in three well-chosen questions: the bottom-10%-by-units AND margin-below-20% rule, the last 12 months, grouping by category, the units/revenue/margin columns, and the buying-plan decision. It also states its assumptions clearly (cancellations, ranking across all products rather than within each category, ties, new launches). Small gaps keep it from full marks: the time range says roughly Oct 2025\u2013Sep 2026 and also says to fall back to the prior 12 full months if September is incomplete. The per-unit cost basis (current vs. historical cost) is not pinned down, and the new-launch treatment is left for the stakeholder to approve."
+ },
+ "rubric_avg": 4.6,
+ "metrics": 4,
+ "metrics_ok": 4,
+ "sql_retries": 1,
+ "findings_grounded": true,
+ "dashboard_problems": [],
+ "minutes": 4.0828278462092085,
+ "timings_s": {
+  "interview": 20,
+  "discovery": 26,
+  "audit": 70,
+  "metric_plan": 35,
+  "sql": 77,
+  "dashboard": 17
+ },
+ "agent_cost_usd": 0.3854414,
+ "judge_cost_usd": 0.021704
+}

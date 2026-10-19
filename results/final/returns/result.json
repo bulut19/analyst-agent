@@ -1,0 +1,41 @@
+{
+ "id": "returns",
+ "questions": 5,
+ "check_ins": 2,
+ "check_in": [
+  {
+   "question": "How many items should a brand or category need before it can be ranked? We expect very few of the 2,756 brands to reach 300 items in 12 months. Options: 300 items for both categories and brands; 300 for categories, 100 for brands; 300 for categories, and for brands the 50 with the most items sold. I'd suggest: 300 items for both categories and brands, unless you prefer otherwise. (A higher cut-off may leave only a handful of brands on the ranking, and a lower one adds more brands but with noisier rates.)",
+   "answer": "300 for both is fine. That's in line with what I said, and I'd rather see a short list of brands that really matter than a long list of noisy ones."
+  },
+  {
+   "question": "Some categories overlap: Socks and Socks & Hosiery, Pants and Pants & Capris, Suits and Suits & Sport Coats. Should we combine each pair? Options: Keep them separate, as they are in the data; Combine the three obvious pairs; Let merchandising give us the mapping first. I'd suggest: Keep them separate, as they are in the data, unless you prefer otherwise. (Combining adds their volume together, which can lift a category over the 300 cut-off and change its rank and rate.)",
+   "answer": "Keep them separate as they are in the data for now. I don't want to guess at groupings before a supplier conversation, and I'll check with merchandising if one of them comes up as a candidate."
+  }
+ ],
+ "scores": {
+  "found_real_need": 5,
+  "kpis_unambiguous": 4,
+  "useful_questions": 4,
+  "flagged_data_limits": 5,
+  "approvable_as_written": 4,
+  "comment": "The brief matches the real need: return rate by category and brand for Oct 2025\u2013Sep 2026 with a monthly trend, the supplier-review decision, the volume threshold, and the exact formula (returned \u00f7 delivered-or-returned, cancelled items excluded), with honest notes on order-date month assignment, missing return reasons and brand standing in for supplier. Gaps: it doesn't say whether the 300-item cut-off applies to each category, each brand or each category-brand pair; the KPI name 'items sold' and the Q2 options didn't match the stakeholder's base; Q5 on audience was low-value; and items still waiting for approval (cut-off, benchmark line, month assignment) mean it can't be signed off exactly as written."
+ },
+ "rubric_avg": 4.4,
+ "metrics": 4,
+ "metrics_ok": 4,
+ "sql_retries": 0,
+ "findings_grounded": true,
+ "dashboard_problems": [],
+ "minutes": 5.629540431499481,
+ "timings_s": {
+  "interview": 31,
+  "discovery": 24,
+  "audit": 70,
+  "metric_plan": 39,
+  "check_in": 20,
+  "sql": 136,
+  "dashboard": 17
+ },
+ "agent_cost_usd": 0.5230729,
+ "judge_cost_usd": 0.024688
+}

@@ -1,0 +1,130 @@
+{
+ "headline": {
+  "label": "Women's revenue vs same quarter last year (Q3 2026, to 30 Sep)",
+  "result_index": 3,
+  "column": "revenue_change_pct",
+  "filter": {
+   "department": "Women",
+   "quarter_start": "2026-07-01"
+  },
+  "format": "percent",
+  "context": "Men's revenue grew less over the same period. Q3 2026 is compared with Q3 2025."
+ },
+ "charts": [
+  {
+   "result_index": 0,
+   "type": "line",
+   "title": "Men and Women revenue both keep climbing",
+   "subtitle": "Revenue of kept items per calendar quarter, Q1 2019 to Q3 2026 (to 30 Sep). Q1 2019 starts 13 Jan.",
+   "x": "quarter_start",
+   "y": "revenue",
+   "color": "department",
+   "filter": {
+    "department": [
+     "Men",
+     "Women"
+    ]
+   },
+   "top_n": 0,
+   "y_format": "currency",
+   "x_title": "Quarter start",
+   "y_title": "Revenue ($)"
+  },
+  {
+   "result_index": 3,
+   "type": "line",
+   "title": "Women's revenue growth has beaten Men's for four quarters",
+   "subtitle": "Revenue change vs the same quarter a year earlier, last 8 quarters (Q4 2024 to Q3 2026).",
+   "x": "quarter_start",
+   "y": "revenue_change_pct",
+   "color": "department",
+   "filter": {
+    "department": [
+     "Men",
+     "Women"
+    ],
+    "quarter_start": [
+     "2024-10-01",
+     "2025-01-01",
+     "2025-04-01",
+     "2025-07-01",
+     "2025-10-01",
+     "2026-01-01",
+     "2026-04-01",
+     "2026-07-01"
+    ]
+   },
+   "top_n": 0,
+   "y_format": "percent",
+   "x_title": "Quarter start",
+   "y_title": "Revenue change vs prior year (%)"
+  },
+  {
+   "result_index": 2,
+   "type": "line",
+   "title": "Gross margin rate is steady at about 52% for both",
+   "subtitle": "Gross margin as a share of revenue, last 8 quarters (Q4 2024 to Q3 2026). Based on current product cost.",
+   "x": "quarter_start",
+   "y": "gross_margin_rate",
+   "color": "department",
+   "filter": {
+    "department": [
+     "Men",
+     "Women"
+    ],
+    "quarter_start": [
+     "2024-10-01",
+     "2025-01-01",
+     "2025-04-01",
+     "2025-07-01",
+     "2025-10-01",
+     "2026-01-01",
+     "2026-04-01",
+     "2026-07-01"
+    ]
+   },
+   "top_n": 0,
+   "y_format": "percent",
+   "x_title": "Quarter start",
+   "y_title": "Gross margin (%)"
+  },
+  {
+   "result_index": 1,
+   "type": "line",
+   "title": "Gross margin dollars are rising fast, Women closing the gap",
+   "subtitle": "Revenue minus product cost of kept items, last 8 quarters (Q4 2024 to Q3 2026).",
+   "x": "order_quarter",
+   "y": "gross_margin",
+   "color": "department",
+   "filter": {
+    "department": [
+     "Men",
+     "Women"
+    ],
+    "order_quarter": [
+     "2024-10-01",
+     "2025-01-01",
+     "2025-04-01",
+     "2025-07-01",
+     "2025-10-01",
+     "2026-01-01",
+     "2026-04-01",
+     "2026-07-01"
+    ]
+   },
+   "top_n": 0,
+   "y_format": "currency",
+   "x_title": "Quarter start",
+   "y_title": "Gross margin ($)"
+  }
+ ],
+ "findings": [
+  "Both departments are improving on revenue: in Q3 2026 (to the end of September), Men's revenue was $506,536, up 96.8% on Q3 2025, and Women's was $475,775, up 113.7%.",
+  "Women's revenue has grown faster than Men's in each of the last four quarters, for example 70.1% against 52.0% in Q1 2026 and 75.3% against 70.7% in Q2 2026.",
+  "Men still lead in size, but only just: Q3 2026 gross margin was $261,845 for Men and $247,387 for Women.",
+  "Gross margin rate is not improving. It has stayed near 52%, and in Q3 2026 it was 51.7% for Men and 52.0% for Women, down 0.1 and 0.3 points on a year earlier.",
+  "Read margin with care: it uses today's product cost, not the cost at the time of sale, and Processing and Shipped items may still change. Returns can also lower past quarters slightly. The data shows what changed, not why."
+ ],
+ "problems": [],
+ "grounded": true
+}

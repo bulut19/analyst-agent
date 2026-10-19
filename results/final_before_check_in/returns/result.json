@@ -1,0 +1,29 @@
+{
+ "id": "returns",
+ "questions": 3,
+ "scores": {
+  "found_real_need": 5,
+  "kpis_unambiguous": 4,
+  "useful_questions": 5,
+  "flagged_data_limits": 5,
+  "approvable_as_written": 4,
+  "comment": "Main strength: the brief covers the whole hidden need. It names the supplier-review decision, the return rate by category and brand, the 12 months with a monthly trend, the stakeholder's exact definition with cancelled items left out, and a 500-item volume cut-off. It also honestly flags the order-date vs return-date choice, possible partial months and the missing return-reason data. Main gap: there are small inconsistencies and unrequested additions. The time range is called '12 complete months (Oct 2025\u2013Sep 2026)' but September may be partial, the base is labelled 'items sold' when it means delivered or returned items, and a Department filter and company-wide benchmark were added without being asked for."
+ },
+ "rubric_avg": 4.6,
+ "metrics": 3,
+ "metrics_ok": 3,
+ "sql_retries": 0,
+ "findings_grounded": true,
+ "dashboard_problems": [],
+ "minutes": 3.742183462778727,
+ "timings_s": {
+  "interview": 20,
+  "discovery": 23,
+  "audit": 75,
+  "metric_plan": 31,
+  "sql": 61,
+  "dashboard": 14
+ },
+ "agent_cost_usd": 0.3199591000000001,
+ "judge_cost_usd": 0.025036000000000003
+}

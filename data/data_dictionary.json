@@ -1,0 +1,144 @@
+{
+  "orders": {
+    "description": "One row per customer order.",
+    "columns": {
+      "order_id": "Unique order ID.",
+      "user_id": "Customer who placed the order (users.id).",
+      "status": "Current order status. Complete = delivered and kept; Returned = sent back; Cancelled = never fulfilled; Shipped = in transit; Processing = not yet shipped.",
+      "gender": "Customer's gender, copied from the customer record. Not the product department.",
+      "created_at": "When the order was placed (UTC).",
+      "returned_at": "When the order was returned. Null unless returned.",
+      "shipped_at": "When the order shipped. Null if not yet shipped or cancelled.",
+      "delivered_at": "When the order was delivered. Null if not yet delivered.",
+      "num_of_item": "Number of items in the order."
+    }
+  },
+  "order_items": {
+    "description": "One row per item sold. The main table for revenue, cost and return analysis.",
+    "columns": {
+      "id": "Unique order item ID.",
+      "order_id": "Order this item belongs to (orders.order_id).",
+      "user_id": "Customer who bought the item (users.id).",
+      "product_id": "Product sold (products.id).",
+      "inventory_item_id": "Physical inventory unit shipped. Not needed for most analysis.",
+      "status": "Status of this item: Complete, Returned, Cancelled, Shipped or Processing. Items in one order can differ.",
+      "created_at": "When the item was ordered (UTC).",
+      "shipped_at": "When the item shipped.",
+      "delivered_at": "When the item was delivered.",
+      "returned_at": "When the item was returned. Null unless returned.",
+      "sale_price": "Price the customer paid for this item, in USD. Revenue is based on this."
+    }
+  },
+  "products": {
+    "description": "Product catalog: one row per product.",
+    "columns": {
+      "id": "Unique product ID.",
+      "cost": "Unit cost to the company, in USD. Gross margin = sale_price - cost.",
+      "category": "Product category, e.g. Jeans, Swim, Accessories.",
+      "name": "Product name.",
+      "brand": "Brand name. There is no separate supplier field.",
+      "retail_price": "List price in USD. The price actually paid is order_items.sale_price.",
+      "department": "Men or Women: the department the product is sold in.",
+      "sku": "Stock keeping unit code.",
+      "distribution_center_id": "Warehouse that stocks the product."
+    }
+  },
+  "users": {
+    "description": "One row per registered customer.",
+    "columns": {
+      "id": "Unique customer ID.",
+      "first_name": "Customer first name (personal data: do not show in dashboards).",
+      "last_name": "Customer last name (personal data: do not show in dashboards).",
+      "email": "Customer email (personal data: do not show in dashboards).",
+      "age": "Customer age in years.",
+      "gender": "Customer gender (M or F).",
+      "state": "State or province.",
+      "city": "City.",
+      "country": "Country.",
+      "postal_code": "Postal code.",
+      "traffic_source": "Marketing channel the customer came from when they signed up. One value per customer, not per order.",
+      "created_at": "When the customer account was created (UTC)."
+    }
+  },
+  "_joins": [
+    "order_items.order_id = orders.order_id",
+    "order_items.product_id = products.id",
+    "order_items.user_id = users.id",
+    "orders.user_id = users.id"
+  ],
+  "_rules": {
+    "_about": "Business rules the audit checks. Written by the analyst; the checks themselves are generic.",
+    "primary_keys": {
+      "orders": "order_id",
+      "order_items": "id",
+      "products": "id",
+      "users": "id"
+    },
+    "unique_columns": [
+      "users.email",
+      "products.sku"
+    ],
+    "required_columns": [
+      "orders.user_id",
+      "orders.status",
+      "orders.created_at",
+      "order_items.order_id",
+      "order_items.product_id",
+      "order_items.user_id",
+      "order_items.status",
+      "order_items.created_at",
+      "order_items.sale_price",
+      "products.category",
+      "products.department",
+      "products.cost",
+      "products.retail_price",
+      "users.country",
+      "users.traffic_source",
+      "users.created_at"
+    ],
+    "positive_columns": [
+      "order_items.sale_price",
+      "products.cost",
+      "products.retail_price",
+      "orders.num_of_item"
+    ],
+    "date_order": {
+      "orders": [
+        [
+          "created_at",
+          "shipped_at"
+        ],
+        [
+          "shipped_at",
+          "delivered_at"
+        ],
+        [
+          "created_at",
+          "delivered_at"
+        ],
+        [
+          "created_at",
+          "returned_at"
+        ]
+      ],
+      "order_items": [
+        [
+          "created_at",
+          "shipped_at"
+        ],
+        [
+          "shipped_at",
+          "delivered_at"
+        ],
+        [
+          "created_at",
+          "delivered_at"
+        ],
+        [
+          "created_at",
+          "returned_at"
+        ]
+      ]
+    }
+  }
+}

@@ -1,0 +1,32 @@
+[
+  {
+    "id": "marketing",
+    "persona": "the marketing manager at an online clothing store",
+    "opening_request": "Can you build me a dashboard on how our marketing channels are doing?",
+    "hidden_need": "You want to know which traffic sources (Search, Email, Facebook, Display, Organic) bring customers who buy again, not just once. You care about the share of each channel's customers who place a second order within 12 months. Monthly view over the last 2 years. You will use it to move budget between channels next quarter. You report to the CMO."
+  },
+  {
+    "id": "returns",
+    "persona": "the head of operations at an online clothing store",
+    "opening_request": "Returns are killing us. I need to see what's going on.",
+    "hidden_need": "You want the return rate by product category and brand for the last 12 months, with a monthly trend. To you, return rate means returned items divided by items that were delivered or returned (cancelled items do not count). You will use it to decide which categories and brands to review with suppliers. You only care about categories with enough volume to matter."
+  },
+  {
+    "id": "finance",
+    "persona": "the CFO of an online clothing store",
+    "opening_request": "I need a revenue dashboard for the board.",
+    "hidden_need": "You want monthly revenue and gross margin for 2025 and 2026 so far, compared year over year, split by department (Men and Women). Revenue means the sale price of items that were not cancelled or returned. Gross margin means revenue minus product cost, as a percentage of revenue. The board meets quarterly, so quarterly totals are also helpful."
+  },
+  {
+    "id": "merchandising",
+    "persona": "the merchandising director at an online clothing store",
+    "opening_request": "Which products should we stop selling?",
+    "hidden_need": "You want a list of discontinuation candidates: products in the bottom 10% by units sold in the last 12 months that also have a margin below 20%, grouped by category. You want to see units sold, revenue and margin for each. This feeds your next season's buying plan."
+  },
+  {
+    "id": "repeat_customers",
+    "persona": "the CEO of an online clothing store",
+    "opening_request": "Why did repeat purchases drop this year?",
+    "hidden_need": "You believe repeat purchases dropped in 2026 but have not checked the numbers. You want the repeat purchase rate (customers who placed 2 or more orders within 12 months of their first order) by the year of their first order, and by country, with the US separated from international. If the data shows no drop, you want to know that too."
+  }
+]

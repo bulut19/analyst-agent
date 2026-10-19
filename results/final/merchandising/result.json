@@ -1,0 +1,37 @@
+{
+ "id": "merchandising",
+ "questions": 4,
+ "check_ins": 1,
+ "check_in": [
+  {
+   "question": "Products with no sales in the last 12 months have no margin, so the rule 'margin under 20%' cannot be applied to them. How should they be handled? Options: Show them as 'No sales', separate from flagged candidates; Flag them automatically as candidates; Judge them on list-price margin (retail price vs cost) and flag if under 20%. I'd suggest: Show them as 'No sales', separate from flagged candidates, unless you prefer otherwise. (Many products probably sold nothing, so this choice decides whether the weakest products appear in the flagged list and changes the headline candidate count a lot.)",
+   "answer": "Show them as \"No sales,\" separate from the flagged list. They can't meet the margin condition, so they shouldn't be flagged automatically, but I still need to see them."
+  }
+ ],
+ "scores": {
+  "found_real_need": 4,
+  "kpis_unambiguous": 4,
+  "useful_questions": 4,
+  "flagged_data_limits": 4,
+  "approvable_as_written": 3,
+  "comment": "Strength: the brief captures the core rule exactly: bottom 10% by units sold within each category AND margin under 20% on actual sale prices, over the last 12 months. It also gets sensible questions answered and records assumptions clearly (cancellations, ties, new launches, how margin is pooled across units). Gap: revenue is never listed as a KPI or a column in the product list, even though the stakeholder wants to see it, and the link to next season's buying plan is never captured. The brief also doesn't say how to handle margin for zero-unit products: with no revenue it can't be calculated, so it's unclear whether they can meet the margin condition."
+ },
+ "rubric_avg": 3.8,
+ "metrics": 5,
+ "metrics_ok": 5,
+ "sql_retries": 0,
+ "findings_grounded": true,
+ "dashboard_problems": [],
+ "minutes": 4.784466330210368,
+ "timings_s": {
+  "interview": 26,
+  "discovery": 30,
+  "audit": 66,
+  "metric_plan": 40,
+  "check_in": 20,
+  "sql": 89,
+  "dashboard": 17
+ },
+ "agent_cost_usd": 0.5281757,
+ "judge_cost_usd": 0.027816000000000007
+}

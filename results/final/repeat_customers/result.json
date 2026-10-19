@@ -1,0 +1,41 @@
+{
+ "id": "repeat_customers",
+ "questions": 5,
+ "check_ins": 2,
+ "check_in": [
+  {
+   "question": "Should cancelled orders be ignored when finding a customer's first and second order? Returned orders would still count. Options: Ignore cancelled orders (returned still count); Count cancelled orders too; Ignore both cancelled and returned orders. I'd suggest: Ignore cancelled orders (returned still count), unless you prefer otherwise. (It changes who counts as a first-time customer, which year they fall in, and the repeat rate headline number.)",
+   "answer": "Ignore cancelled orders and keep returned ones counted. That's the standard way to measure real purchases, so go with your suggestion."
+  },
+  {
+   "question": "For the recent groups that do not have 12 months of history yet (Oct 2025 onward), how should the rate be shown? Options: Rate so far only, labeled 'not final'; Also add a same-time comparison, such as the 6-month repeat rate for every year; Hide these groups until complete. I'd suggest: Rate so far only, labeled 'not final', unless you prefer otherwise. (Without a same-time comparison, 2025 Q4 and 2026 will look lower than earlier years just because they have had less time to reorder.)",
+   "answer": "Go with the same-time comparison, such as the 6-month repeat rate for every year, along with the \"not final\" labels. I need to know whether 2026 really dropped, and without a like-for-like measure the recent groups will look worse just because they've had less time to reorder."
+  }
+ ],
+ "scores": {
+  "found_real_need": 5,
+  "kpis_unambiguous": 4,
+  "useful_questions": 4,
+  "flagged_data_limits": 5,
+  "approvable_as_written": 4,
+  "comment": "Strength: the brief matches the real need closely. It measures the 12-month repeat rate by year of first order, splits out the US from international countries, and asks how the rate changed rather than assuming a drop. It is also candid about limits: customers who ordered before 2019 will look new, there is no data on loyalty offers, and the data can't explain causes. Gap: the main 2026 comparison is not like-for-like. Partial rates are set against full 12-month rates, and the same-elapsed-time comparison is only offered as an option. Splitting 2025 into complete and incomplete parts also leaves the main view unclear, so a manager would likely ask for a fix before signing off."
+ },
+ "rubric_avg": 4.4,
+ "metrics": 4,
+ "metrics_ok": 4,
+ "sql_retries": 0,
+ "findings_grounded": true,
+ "dashboard_problems": [],
+ "minutes": 5.283858835697174,
+ "timings_s": {
+  "interview": 40,
+  "discovery": 31,
+  "audit": 65,
+  "metric_plan": 37,
+  "check_in": 29,
+  "sql": 93,
+  "dashboard": 22
+ },
+ "agent_cost_usd": 0.5093969,
+ "judge_cost_usd": 0.031271999999999994
+}

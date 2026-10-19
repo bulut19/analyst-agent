@@ -1,0 +1,93 @@
+{
+ "headline": {
+  "label": "12-month repeat purchase rate, all channels",
+  "result_index": 2,
+  "column": "repeat_rate",
+  "filter": {
+   "view_type": "whole_window_total",
+   "sign_up_channel": "All channels"
+  },
+  "format": "percent",
+  "context": "Customers whose first order was Oct 2023 to Sep 2025 who ordered again within 12 months."
+ },
+ "charts": [
+  {
+   "result_index": 2,
+   "type": "bar",
+   "title": "Repeat rates are close: Organic leads, Display trails",
+   "subtitle": "Share of new customers who ordered again within 12 months, by sign-up channel. First orders Oct 2023 to Sep 2025.",
+   "x": "sign_up_channel",
+   "y": "repeat_rate",
+   "color": "",
+   "filter": {
+    "view_type": "whole_window_total",
+    "sign_up_channel": [
+     "Display",
+     "Email",
+     "Facebook",
+     "Organic",
+     "Search"
+    ]
+   },
+   "top_n": 0,
+   "reference_value": 0.1961,
+   "reference_label": "all-channel average 19.6%",
+   "y_format": "percent",
+   "x_title": "Sign-up channel",
+   "y_title": "12-month repeat rate (%)"
+  },
+  {
+   "result_index": 2,
+   "type": "line",
+   "title": "Repeat rates have risen for every channel since 2023",
+   "subtitle": "12-month repeat rate, rolling 3 months of first-order cohorts. Each point is labelled by its last cohort month.",
+   "x": "cohort_month",
+   "y": "repeat_rate",
+   "color": "sign_up_channel",
+   "filter": {
+    "view_type": "rolling_3_month"
+   },
+   "top_n": 0,
+   "reference_value": null,
+   "reference_label": "",
+   "y_format": "percent",
+   "x_title": "Last cohort month in the 3-month window",
+   "y_title": "12-month repeat rate (%)"
+  },
+  {
+   "result_index": 2,
+   "type": "bar",
+   "title": "Search brings most new customers, so it drives the total",
+   "subtitle": "New customers by sign-up channel, first orders Oct 2023 to Sep 2025.",
+   "x": "sign_up_channel",
+   "y": "cohort_size",
+   "color": "",
+   "filter": {
+    "view_type": "whole_window_total",
+    "sign_up_channel": [
+     "Display",
+     "Email",
+     "Facebook",
+     "Organic",
+     "Search"
+    ]
+   },
+   "top_n": 0,
+   "reference_value": null,
+   "reference_label": "",
+   "y_format": "number",
+   "x_title": "Sign-up channel",
+   "y_title": "New customers"
+  }
+ ],
+ "findings": [
+  "Across all channels, 19.6% of new customers placed a second order within 12 months (4,539 of 23,146).",
+  "Channels differ little over the full period: Organic is highest at 20.6%, Search is 19.5% and Display is lowest at 18.3%.",
+  "Repeat rates have climbed across the board, from 15.9% for the Oct 2023 cohort to 26.6% for the Sep 2025 cohort; the data shows the rise but not the cause.",
+  "In the latest three cohorts (Jul to Sep 2025), Organic is at 29.4% and Display at 28.3%, while Email (21.2%) and Facebook (21.7%) are lower.",
+  "Search brought 16,335 of the 23,146 new customers, so it sets the overall rate; Display has only 854 customers and many months with fewer than 30, so its rate can swing a lot.",
+  "Channel is the sign-up channel, which may differ from the channel of the first purchase, and there is no spend data, so this cannot show which channel gives the best return on budget."
+ ],
+ "problems": [],
+ "grounded": true
+}

@@ -1,0 +1,186 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1"><title>I need a revenue dashboard for the board.</title>
+<style>
+:root { --surface:#fcfcfb; --page:#f9f9f7; --ink:#0b0b0b; --ink2:#52514e; --muted:#898781; --rule:#e1e0d9; }
+body { margin:0; background:var(--page); color:var(--ink); font:15px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif; }
+main { max-width:1040px; margin:0 auto; padding:32px 16px 64px; }
+h1 { font-size:24px; margin:0 0 4px; } .q { color:var(--ink2); margin:0 0 24px; }
+.top { display:grid; grid-template-columns:minmax(220px,1fr) 2fr; gap:16px; margin-bottom:16px; }
+.card { background:var(--surface); border:1px solid var(--rule); border-radius:12px; padding:20px; margin-bottom:16px; }
+.hero .label { color:var(--ink2); font-size:13px; } .hero .value { font-size:48px; font-weight:600; line-height:1.1; margin:6px 0; }
+.hero .ctx { color:var(--ink2); font-size:13px; } h2 { font-size:13px; text-transform:uppercase; letter-spacing:.04em; color:var(--muted); margin:0 0 8px; }
+ul { margin:0; padding-left:20px; } li { margin:4px 0; }
+details { margin-top:8px; } summary { cursor:pointer; color:var(--ink2); font-size:13px; }
+table.data { border-collapse:collapse; font-size:13px; margin-top:8px; font-variant-numeric:tabular-nums; }
+table.data th, table.data td { border-bottom:1px solid var(--rule); padding:4px 12px 4px 0; text-align:left; }
+.notes { color:var(--ink2); font-size:13px; } @media (max-width:720px) { .top { grid-template-columns:1fr; } }
+</style></head><body><main>
+<h1>I need a revenue dashboard for the board.</h1><p class="q">How do revenue and gross margin for the Men&#x27;s and Women&#x27;s departments in Q1–Q3 2026 compare with the same quarters of 2025?</p>
+<div class="top"><section class="card hero"><div class="label">Q3 2026 revenue vs Q3 2025, Men + Women (through September)</div>
+<div class="value">104.6%</div><div class="ctx">Kept items only. Q3 2026 runs through September and may not be final.</div></section>
+<section class="card"><h2>Findings</h2><ul><li>Revenue for Men and Women combined is well above last year in all three quarters: up <b>60.2%</b> in Q1, <b>72.8%</b> in Q2 and <b>104.6%</b> in Q3 (through September).</li><li>In Q3 (through September), combined revenue was <b>$982,311</b> against <b>$480,025</b> a year earlier, and items sold roughly doubled from <b>8,034</b> to <b>16,718</b>.</li><li>Women&#x27;s revenue grew faster than Men&#x27;s in every quarter, for example <b>113.6%</b> vs <b>96.8%</b> in Q3 (through September).</li><li>Gross margin dollars grew about as fast as revenue, reaching <b>$509,232</b> in Q3 (through September) against <b>$249,715</b> a year earlier.</li><li>The margin rate stayed near <b>52%</b>: it rose <b>0.4 points</b> in Q1 for the combined total, then fell <b>0.2 points</b> in Q3 to <b>51.8%</b>, so the extra revenue did not come at a lower margin rate.</li><li>Read with care: Q3 2026 may not be final, and items still in transit count as revenue and could later be returned. Margin uses today&#x27;s product cost, and there are no targets in the data, so this compares with last year only and cannot say if the company is on track.</li></ul></section></div>
+<section class="card"><div style="height:430px; width:100%;">                        <script>window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
+        <script charset="utf-8" src="https://cdn.plot.ly/plotly-4.1.1.min.js" integrity="sha256-O24V1F27f8pb0glCkelh3cVHLNiHAJ5gCaVtq2aNch8=" crossorigin="anonymous"></script>                <div id="2cd6f3a4-9c11-4a78-8185-5256258bf61b" class="plotly-graph-div" style="height:100%; width:100%;"></div>            <script>                window.PLOTLYENV=window.PLOTLYENV || {};                                if (document.getElementById("2cd6f3a4-9c11-4a78-8185-5256258bf61b")) {                    Plotly.newPlot(                        "2cd6f3a4-9c11-4a78-8185-5256258bf61b",                        [{"hovertemplate":"%{y}: \u003cb\u003e%{x:$,.0f}\u003c\u002fb\u003e\u003cextra\u003e2025\u003c\u002fextra\u003e","marker":{"color":"#2a78d6","cornerradius":4},"name":"2025","orientation":"h","x":{"dtype":"f8","bdata":"ADhPKdi9F0EA0POZuAAaQYBinNdiTB1B"},"y":["Q1","Q2","Q3"],"type":"bar"},{"hovertemplate":"%{y}: \u003cb\u003e%{x:$,.0f}\u003c\u002fb\u003e\u003cextra\u003e2026\u003c\u002fextra\u003e","marker":{"color":"#eb6834","cornerradius":4},"name":"2026","orientation":"h","x":{"dtype":"f8","bdata":"AEg8+6gDI0EAQFhNsHgmQUCZ5o9N+i1B"},"y":["Q1","Q2","Q3"],"type":"bar"}],                        {"template":{"data":{"scatter":[{"type":"scatter"}]}},"barmode":"group","xaxis":{"range":[0,1119834.2904040713],"tickfont":{"color":"#898781","size":11},"title":{"font":{"color":"#52514e","size":12},"text":"Revenue ($)","standoff":8},"tickformat":"$,.0f","gridcolor":"#e1e0d9","gridwidth":1,"zeroline":true,"zerolinecolor":"#c3c2b7","automargin":true,"ticksuffix":""},"font":{"family":"system-ui, -apple-system, \"Segoe UI\", sans-serif","color":"#0b0b0b","size":12},"title":{"font":{"size":15},"text":"\u003cb\u003eRevenue is well above last year in every quarter\u003c\u002fb\u003e\u003cbr\u003e\u003cspan style='font-size:12px;color:#52514e'\u003eRevenue of kept items, Men + Women combined, by order quarter, 2025 vs 2026 ($). Q3 2026 is through September.\u003c\u002fspan\u003e","x":0,"xanchor":"left"},"legend":{"font":{"color":"#52514e","size":11},"orientation":"h","y":-0.22,"x":0},"margin":{"l":10,"r":40,"t":70,"b":50},"hoverlabel":{"font":{"color":"#0b0b0b","family":"system-ui, -apple-system, \"Segoe UI\", sans-serif"},"bgcolor":"white","bordercolor":"#e1e0d9"},"yaxis":{"tickfont":{"color":"#52514e","size":11},"title":{"font":{"color":"#52514e","size":12},"text":"Order quarter","standoff":8},"showgrid":false,"linecolor":"#c3c2b7","automargin":true},"paper_bgcolor":"#fcfcfb","plot_bgcolor":"#fcfcfb","showlegend":true,"bargap":0.35,"bargroupgap":0.08,"height":430},                        {"displayModeBar": false, "responsive": true}                    )                };            </script>        </div><details><summary>Table view</summary><table class="dataframe data">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Order quarter</th>
+      <th>Order year</th>
+      <th>Revenue ($)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Q3</td>
+      <td>2026</td>
+      <td>982,310.78</td>
+    </tr>
+    <tr>
+      <td>Q2</td>
+      <td>2026</td>
+      <td>736,344.15</td>
+    </tr>
+    <tr>
+      <td>Q1</td>
+      <td>2026</td>
+      <td>623,060.49</td>
+    </tr>
+    <tr>
+      <td>Q3</td>
+      <td>2025</td>
+      <td>480,024.71</td>
+    </tr>
+    <tr>
+      <td>Q2</td>
+      <td>2025</td>
+      <td>426,030.15</td>
+    </tr>
+    <tr>
+      <td>Q1</td>
+      <td>2025</td>
+      <td>388,982.04</td>
+    </tr>
+  </tbody>
+</table></details></section><section class="card"><div style="height:430px; width:100%;">                            <div id="5221e611-d6b2-45db-92d3-b5c06b5ec230" class="plotly-graph-div" style="height:100%; width:100%;"></div>            <script>                window.PLOTLYENV=window.PLOTLYENV || {};                                if (document.getElementById("5221e611-d6b2-45db-92d3-b5c06b5ec230")) {                    Plotly.newPlot(                        "5221e611-d6b2-45db-92d3-b5c06b5ec230",                        [{"hovertemplate":"%{y}: \u003cb\u003e%{x:.1%}\u003c\u002fb\u003e\u003cextra\u003eMen\u003c\u002fextra\u003e","marker":{"color":"#2a78d6","cornerradius":4},"name":"Men","orientation":"h","x":{"dtype":"f8","bdata":"inAL7uyi4D+YJCPKJZ3mP\u002faOpWkN\u002fe4\u002f"},"y":["Q1 2026","Q2 2026","Q3 2026 (through September)"],"type":"bar"},{"hovertemplate":"%{y}: \u003cb\u003e%{x:.1%}\u003c\u002fb\u003e\u003cextra\u003eWomen\u003c\u002fextra\u003e","marker":{"color":"#eb6834","cornerradius":4},"name":"Women","orientation":"h","x":{"dtype":"f8","bdata":"9taM4p1w5j9ucaE+0hboP9CqNKUTL\u002fI\u002f"},"y":["Q1 2026","Q2 2026","Q3 2026 (through September)"],"type":"bar"}],                        {"template":{"data":{"scatter":[{"type":"scatter"}]}},"barmode":"group","xaxis":{"range":[0,1.295602412874005],"tickfont":{"color":"#898781","size":11},"title":{"font":{"color":"#52514e","size":12},"text":"Revenue change vs last year (%)","standoff":8},"tickformat":".0%","gridcolor":"#e1e0d9","gridwidth":1,"zeroline":true,"zerolinecolor":"#c3c2b7","automargin":true,"ticksuffix":""},"font":{"family":"system-ui, -apple-system, \"Segoe UI\", sans-serif","color":"#0b0b0b","size":12},"title":{"font":{"size":15},"text":"\u003cb\u003eWomen's revenue grew faster than Men's in all three quarters\u003c\u002fb\u003e\u003cbr\u003e\u003cspan style='font-size:12px;color:#52514e'\u003eChange in revenue vs the same quarter of 2025 (%). Q3 2026 is through September.\u003c\u002fspan\u003e","x":0,"xanchor":"left"},"legend":{"font":{"color":"#52514e","size":11},"orientation":"h","y":-0.22,"x":0},"margin":{"l":10,"r":40,"t":70,"b":50},"hoverlabel":{"font":{"color":"#0b0b0b","family":"system-ui, -apple-system, \"Segoe UI\", sans-serif"},"bgcolor":"white","bordercolor":"#e1e0d9"},"yaxis":{"tickfont":{"color":"#52514e","size":11},"title":{"font":{"color":"#52514e","size":12},"text":"Quarter (2026 vs 2025)","standoff":8},"showgrid":false,"linecolor":"#c3c2b7","automargin":true},"paper_bgcolor":"#fcfcfb","plot_bgcolor":"#fcfcfb","showlegend":true,"bargap":0.35,"bargroupgap":0.08,"height":430},                        {"displayModeBar": false, "responsive": true}                    )                };            </script>        </div><details><summary>Table view</summary><table class="dataframe data">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Quarter (2026 vs 2025)</th>
+      <th>Department</th>
+      <th>Revenue change vs last year (%)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Q3 2026 (through September)</td>
+      <td>Women</td>
+      <td>113.6%</td>
+    </tr>
+    <tr>
+      <td>Q3 2026 (through September)</td>
+      <td>Men</td>
+      <td>96.8%</td>
+    </tr>
+    <tr>
+      <td>Q2 2026</td>
+      <td>Women</td>
+      <td>75.3%</td>
+    </tr>
+    <tr>
+      <td>Q2 2026</td>
+      <td>Men</td>
+      <td>70.7%</td>
+    </tr>
+    <tr>
+      <td>Q1 2026</td>
+      <td>Women</td>
+      <td>70.1%</td>
+    </tr>
+    <tr>
+      <td>Q1 2026</td>
+      <td>Men</td>
+      <td>52.0%</td>
+    </tr>
+  </tbody>
+</table></details></section><section class="card"><div style="height:430px; width:100%;">                            <div id="3d84c0e7-13b9-48f1-bddd-43c8b32daa6a" class="plotly-graph-div" style="height:100%; width:100%;"></div>            <script>                window.PLOTLYENV=window.PLOTLYENV || {};                                if (document.getElementById("3d84c0e7-13b9-48f1-bddd-43c8b32daa6a")) {                    Plotly.newPlot(                        "3d84c0e7-13b9-48f1-bddd-43c8b32daa6a",                        [{"hovertemplate":"%{y}: \u003cb\u003e%{x:$,.0f}\u003c\u002fb\u003e\u003cextra\u003e2025\u003c\u002fextra\u003e","marker":{"color":"#2a78d6","cornerradius":4},"name":"2025","orientation":"h","x":{"dtype":"f8","bdata":"TNM6MF6XCEHSLhB8CfoKQcJHZ52aew5B"},"y":["Q1","Q2","Q3"],"type":"bar"},{"hovertemplate":"%{y}: \u003cb\u003e%{x:$,.0f}\u003c\u002fb\u003e\u003cextra\u003e2026\u003c\u002fextra\u003e","marker":{"color":"#eb6834","cornerradius":4},"name":"2026","orientation":"h","x":{"dtype":"f8","bdata":"W7FVbDbVE0GANoJRQV4XQTQ5T36+FB9B"},"y":["Q1","Q2","Q3"],"type":"bar"}],                        {"template":{"data":{"scatter":[{"type":"scatter"}]}},"barmode":"group","xaxis":{"range":[0,580524.0506179609],"tickfont":{"color":"#898781","size":11},"title":{"font":{"color":"#52514e","size":12},"text":"Gross margin ($)","standoff":8},"tickformat":"$,.0f","gridcolor":"#e1e0d9","gridwidth":1,"zeroline":true,"zerolinecolor":"#c3c2b7","automargin":true,"ticksuffix":""},"font":{"family":"system-ui, -apple-system, \"Segoe UI\", sans-serif","color":"#0b0b0b","size":12},"title":{"font":{"size":15},"text":"\u003cb\u003eGross margin dollars rose in step with revenue\u003c\u002fb\u003e\u003cbr\u003e\u003cspan style='font-size:12px;color:#52514e'\u003eGross margin (revenue minus product cost), Men + Women combined, by order quarter ($). Q3 2026 is through September.\u003c\u002fspan\u003e","x":0,"xanchor":"left"},"legend":{"font":{"color":"#52514e","size":11},"orientation":"h","y":-0.22,"x":0},"margin":{"l":10,"r":40,"t":70,"b":50},"hoverlabel":{"font":{"color":"#0b0b0b","family":"system-ui, -apple-system, \"Segoe UI\", sans-serif"},"bgcolor":"white","bordercolor":"#e1e0d9"},"yaxis":{"tickfont":{"color":"#52514e","size":11},"title":{"font":{"color":"#52514e","size":12},"text":"Order quarter","standoff":8},"showgrid":false,"linecolor":"#c3c2b7","automargin":true},"paper_bgcolor":"#fcfcfb","plot_bgcolor":"#fcfcfb","showlegend":true,"bargap":0.35,"bargroupgap":0.08,"height":430},                        {"displayModeBar": false, "responsive": true}                    )                };            </script>        </div><details><summary>Table view</summary><table class="dataframe data">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Order quarter</th>
+      <th>Order year</th>
+      <th>Gross margin ($)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Q3</td>
+      <td>2026</td>
+      <td>509,231.62</td>
+    </tr>
+    <tr>
+      <td>Q2</td>
+      <td>2026</td>
+      <td>382,864.33</td>
+    </tr>
+    <tr>
+      <td>Q1</td>
+      <td>2026</td>
+      <td>324,941.61</td>
+    </tr>
+    <tr>
+      <td>Q3</td>
+      <td>2025</td>
+      <td>249,715.33</td>
+    </tr>
+    <tr>
+      <td>Q2</td>
+      <td>2025</td>
+      <td>220,993.19</td>
+    </tr>
+    <tr>
+      <td>Q1</td>
+      <td>2025</td>
+      <td>201,451.77</td>
+    </tr>
+  </tbody>
+</table></details></section><section class="card"><div style="height:430px; width:100%;">                            <div id="74c5e702-33c4-4692-95e3-359c85e1c790" class="plotly-graph-div" style="height:100%; width:100%;"></div>            <script>                window.PLOTLYENV=window.PLOTLYENV || {};                                if (document.getElementById("74c5e702-33c4-4692-95e3-359c85e1c790")) {                    Plotly.newPlot(                        "74c5e702-33c4-4692-95e3-359c85e1c790",                        [{"hovertemplate":"%{y}: \u003cb\u003e%{x:,.2f}\u003c\u002fb\u003e\u003cextra\u003eWomen\u003c\u002fextra\u003e","marker":{"color":"#eb6834","cornerradius":4},"name":"Women","orientation":"h","x":{"dtype":"f8","bdata":"aEQkxeWa0b9AXitpMYWmP8jjGWZa19U\u002f"},"y":["Q3 2026 (through September)","Q2 2026","Q1 2026"],"type":"bar"},{"hovertemplate":"%{y}: \u003cb\u003e%{x:,.2f}\u003c\u002fb\u003e\u003cextra\u003eMen\u003c\u002fextra\u003e","marker":{"color":"#2a78d6","cornerradius":4},"name":"Men","orientation":"h","x":{"dtype":"f8","bdata":"YJDwNVKJvL8gvocikLXIP9ARbzg8Rdg\u002f"},"y":["Q3 2026 (through September)","Q2 2026","Q1 2026"],"type":"bar"}],                        {"template":{"data":{"scatter":[{"type":"scatter"}]}},"barmode":"group","xaxis":{"range":[-0.366681892575923,0.47082848051045123],"tickfont":{"color":"#898781","size":11},"title":{"font":{"color":"#52514e","size":12},"text":"Gross margin % change (points)","standoff":8},"tickformat":",.2f","gridcolor":"#e1e0d9","gridwidth":1,"zeroline":true,"zerolinecolor":"#c3c2b7","automargin":true,"ticksuffix":""},"font":{"family":"system-ui, -apple-system, \"Segoe UI\", sans-serif","color":"#0b0b0b","size":12},"title":{"font":{"size":15},"text":"\u003cb\u003eMargin rate moved less than half a point either way\u003c\u002fb\u003e\u003cbr\u003e\u003cspan style='font-size:12px;color:#52514e'\u003eChange in gross margin % vs the same quarter of 2025, in percentage points. Q3 2026 is through September.\u003c\u002fspan\u003e","x":0,"xanchor":"left"},"legend":{"font":{"color":"#52514e","size":11},"orientation":"h","y":-0.22,"x":0},"margin":{"l":10,"r":40,"t":70,"b":50},"hoverlabel":{"font":{"color":"#0b0b0b","family":"system-ui, -apple-system, \"Segoe UI\", sans-serif"},"bgcolor":"white","bordercolor":"#e1e0d9"},"yaxis":{"tickfont":{"color":"#52514e","size":11},"title":{"font":{"color":"#52514e","size":12},"text":"Quarter (2026 vs 2025)","standoff":8},"showgrid":false,"linecolor":"#c3c2b7","automargin":true},"paper_bgcolor":"#fcfcfb","plot_bgcolor":"#fcfcfb","showlegend":true,"bargap":0.35,"bargroupgap":0.08,"height":430},                        {"displayModeBar": false, "responsive": true}                    )                };            </script>        </div><details><summary>Table view</summary><table class="dataframe data">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Quarter (2026 vs 2025)</th>
+      <th>Department</th>
+      <th>Gross margin % change (points)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Q1 2026</td>
+      <td>Men</td>
+      <td>0.38</td>
+    </tr>
+    <tr>
+      <td>Q1 2026</td>
+      <td>Women</td>
+      <td>0.34</td>
+    </tr>
+    <tr>
+      <td>Q2 2026</td>
+      <td>Men</td>
+      <td>0.19</td>
+    </tr>
+    <tr>
+      <td>Q2 2026</td>
+      <td>Women</td>
+      <td>0.04</td>
+    </tr>
+    <tr>
+      <td>Q3 2026 (through September)</td>
+      <td>Men</td>
+      <td>-0.11</td>
+    </tr>
+    <tr>
+      <td>Q3 2026 (through September)</td>
+      <td>Women</td>
+      <td>-0.28</td>
+    </tr>
+  </tbody>
+</table></details></section>
+<section class="card notes"><h2>Data notes</h2><p>Two findings could change the board numbers. They are the 5 order items with zero or negative prices, and the 5 items whose product is missing from the product table. The other four are real data errors, but no KPI in this brief uses those fields. They need only light handling.</p><p><b>Period:</b> 2025-01-01 to 2026-09-30.</p>
+<p><b>Decisions assumed:</b></p><ul><li>Items with sale_price of zero or below (5 items): we leave them out of Revenue and margin, and log them. Please overrule if they are real sales.</li><li>Items with no matching product (5 items, IDs 30001–30005): left out of all numbers. They look like test records.</li><li>Status: we follow the brief and leave out only Cancelled and Returned items. Shipped and Processing items count as revenue. Q3 2026 has more in-transit items, which could flatter the 2026 comparison and change if they are later returned. The alternative is to count Complete items only. Please confirm.</li><li>Gross margin = sale price minus the product cost on file. Cost is today&#x27;s cost, not the cost at time of sale. Please confirm.</li><li>Quarters are calendar quarters. Please confirm they match the company&#x27;s fiscal year. The data cannot check this.</li><li>Revenue is placed in the quarter the order was placed. Returns are removed from the original quarter, so past figures can change.</li><li>Revenue is item sale price only. Shipping, tax and extra discounts are not in the data.</li><li>Only Men&#x27;s and Women&#x27;s departments are shown. Any other department is left out.</li><li>We include a combined &#x27;Men + Women&#x27; total, built from summed dollars. Tell us if you do not want it.</li><li>The &#x27;on track&#x27; judgement is out of scope. There are no targets, so the dashboard compares with last year only.</li><li>Ship, delivery and return dates are not used, so the date errors in them do not change any number.</li></ul></section>
+</main></body></html>

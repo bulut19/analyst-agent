@@ -1,0 +1,401 @@
+{
+  "orders": {
+    "rows": 117984,
+    "columns": {
+      "order_id": {
+        "type": "INT64",
+        "null_pct": 0.0,
+        "distinct": 117984,
+        "range": [
+          "1",
+          "125704"
+        ]
+      },
+      "user_id": {
+        "type": "INT64",
+        "null_pct": 0.0,
+        "distinct": 76033,
+        "range": [
+          "1",
+          "100000"
+        ]
+      },
+      "status": {
+        "type": "STRING",
+        "null_pct": 0.0,
+        "distinct": 5,
+        "values": [
+          "Shipped",
+          "Complete",
+          "Processing",
+          "Cancelled",
+          "Returned"
+        ]
+      },
+      "gender": {
+        "type": "STRING",
+        "null_pct": 0.0,
+        "distinct": 2,
+        "values": [
+          "F",
+          "M"
+        ]
+      },
+      "created_at": {
+        "type": "TIMESTAMP",
+        "null_pct": 0.0,
+        "distinct": 117933,
+        "range": [
+          "2019-01-13 05:37:50+00",
+          "2026-09-30 23:59:02+00"
+        ]
+      },
+      "returned_at": {
+        "type": "TIMESTAMP",
+        "null_pct": 90.0,
+        "distinct": 11840,
+        "range": [
+          "2019-02-03 03:35:42+00",
+          "2026-10-08 22:41:28+00"
+        ]
+      },
+      "shipped_at": {
+        "type": "TIMESTAMP",
+        "null_pct": 35.0,
+        "distinct": 76689,
+        "range": [
+          "2019-01-13 06:58:50+00",
+          "2026-10-03 22:50:24+00"
+        ]
+      },
+      "delivered_at": {
+        "type": "TIMESTAMP",
+        "null_pct": 65.0,
+        "distinct": 41262,
+        "range": [
+          "2019-01-13 09:55:50+00",
+          "2026-10-08 05:51:36+00"
+        ]
+      },
+      "num_of_item": {
+        "type": "INT64",
+        "null_pct": 0.0,
+        "distinct": 4,
+        "range": [
+          "1",
+          "4"
+        ]
+      }
+    }
+  },
+  "order_items": {
+    "rows": 171363,
+    "columns": {
+      "id": {
+        "type": "INT64",
+        "null_pct": 0.0,
+        "distinct": 171363,
+        "range": [
+          "1",
+          "182588"
+        ]
+      },
+      "order_id": {
+        "type": "INT64",
+        "null_pct": 0.0,
+        "distinct": 117984,
+        "range": [
+          "1",
+          "125704"
+        ]
+      },
+      "user_id": {
+        "type": "INT64",
+        "null_pct": 0.0,
+        "distinct": 76033,
+        "range": [
+          "1",
+          "100000"
+        ]
+      },
+      "product_id": {
+        "type": "INT64",
+        "null_pct": 0.0,
+        "distinct": 29023,
+        "range": [
+          "1",
+          "29120"
+        ]
+      },
+      "inventory_item_id": {
+        "type": "INT64",
+        "null_pct": 0.0,
+        "distinct": 171363,
+        "range": [
+          "2",
+          "492521"
+        ]
+      },
+      "status": {
+        "type": "STRING",
+        "null_pct": 0.0,
+        "distinct": 5,
+        "values": [
+          "Shipped",
+          "Complete",
+          "Processing",
+          "Cancelled",
+          "Returned"
+        ]
+      },
+      "created_at": {
+        "type": "TIMESTAMP",
+        "null_pct": 0.0,
+        "distinct": 171256,
+        "range": [
+          "2019-01-13 04:46:07+00",
+          "2026-10-04 23:38:15+00"
+        ]
+      },
+      "shipped_at": {
+        "type": "TIMESTAMP",
+        "null_pct": 35.0,
+        "distinct": 76689,
+        "range": [
+          "2019-01-13 06:58:50+00",
+          "2026-10-03 22:50:24+00"
+        ]
+      },
+      "delivered_at": {
+        "type": "TIMESTAMP",
+        "null_pct": 65.0,
+        "distinct": 41262,
+        "range": [
+          "2019-01-13 09:55:50+00",
+          "2026-10-08 05:51:36+00"
+        ]
+      },
+      "returned_at": {
+        "type": "TIMESTAMP",
+        "null_pct": 90.0,
+        "distinct": 11840,
+        "range": [
+          "2019-02-03 03:35:42+00",
+          "2026-10-08 22:41:28+00"
+        ]
+      },
+      "sale_price": {
+        "type": "FLOAT64",
+        "null_pct": 0.0,
+        "distinct": 4184,
+        "range": [
+          "0.0199999995529651",
+          "999"
+        ]
+      }
+    }
+  },
+  "products": {
+    "rows": 29120,
+    "columns": {
+      "id": {
+        "type": "INT64",
+        "null_pct": 0.0,
+        "distinct": 29120,
+        "range": [
+          "1",
+          "29120"
+        ]
+      },
+      "cost": {
+        "type": "FLOAT64",
+        "null_pct": 0.0,
+        "distinct": 26375,
+        "range": [
+          "0.0082999997779726",
+          "557.15100217983127"
+        ]
+      },
+      "category": {
+        "type": "STRING",
+        "null_pct": 0.0,
+        "distinct": 26,
+        "values": [
+          "Intimates",
+          "Jeans",
+          "Tops & Tees",
+          "Fashion Hoodies & Sweatshirts",
+          "Swim",
+          "Sleep & Lounge",
+          "Shorts",
+          "Sweaters",
+          "Accessories",
+          "Active",
+          "Outerwear & Coats",
+          "Underwear",
+          "Pants",
+          "Dresses",
+          "Socks",
+          "Maternity",
+          "Plus",
+          "Suits & Sport Coats",
+          "Socks & Hosiery",
+          "Pants & Capris",
+          "Leggings",
+          "Blazers & Jackets",
+          "Skirts",
+          "Suits",
+          "Jumpsuits & Rompers",
+          "Clothing Sets"
+        ]
+      },
+      "name": {
+        "type": "STRING",
+        "null_pct": 0.0,
+        "distinct": 27309
+      },
+      "brand": {
+        "type": "STRING",
+        "null_pct": 0.1,
+        "distinct": 2756
+      },
+      "retail_price": {
+        "type": "FLOAT64",
+        "null_pct": 0.0,
+        "distinct": 4194,
+        "range": [
+          "0.0199999995529651",
+          "999"
+        ]
+      },
+      "department": {
+        "type": "STRING",
+        "null_pct": 0.0,
+        "distinct": 2,
+        "values": [
+          "Women",
+          "Men"
+        ]
+      },
+      "sku": {
+        "type": "STRING",
+        "null_pct": 0.0,
+        "distinct": 29120
+      },
+      "distribution_center_id": {
+        "type": "INT64",
+        "null_pct": 0.0,
+        "distinct": 10,
+        "range": [
+          "1",
+          "10"
+        ]
+      }
+    }
+  },
+  "users": {
+    "rows": 96898,
+    "columns": {
+      "id": {
+        "type": "INT64",
+        "null_pct": 0.0,
+        "distinct": 96898,
+        "range": [
+          "1",
+          "100000"
+        ]
+      },
+      "first_name": {
+        "type": "STRING",
+        "null_pct": 0.0,
+        "distinct": 690
+      },
+      "last_name": {
+        "type": "STRING",
+        "null_pct": 0.0,
+        "distinct": 1000
+      },
+      "email": {
+        "type": "STRING",
+        "null_pct": 0.0,
+        "distinct": 81495
+      },
+      "age": {
+        "type": "INT64",
+        "null_pct": 0.0,
+        "distinct": 59,
+        "range": [
+          "12",
+          "70"
+        ]
+      },
+      "gender": {
+        "type": "STRING",
+        "null_pct": 0.0,
+        "distinct": 2,
+        "values": [
+          "F",
+          "M"
+        ]
+      },
+      "state": {
+        "type": "STRING",
+        "null_pct": 0.0,
+        "distinct": 229
+      },
+      "city": {
+        "type": "STRING",
+        "null_pct": 0.0,
+        "distinct": 7845
+      },
+      "country": {
+        "type": "STRING",
+        "null_pct": 0.0,
+        "distinct": 15,
+        "values": [
+          "China",
+          "United States",
+          "Brasil",
+          "South Korea",
+          "France",
+          "United Kingdom",
+          "Germany",
+          "Spain",
+          "Japan",
+          "Australia",
+          "Belgium",
+          "Poland",
+          "Colombia",
+          "Espa\u00f1a",
+          "Austria"
+        ]
+      },
+      "postal_code": {
+        "type": "STRING",
+        "null_pct": 0.0,
+        "distinct": 15596
+      },
+      "traffic_source": {
+        "type": "STRING",
+        "null_pct": 0.0,
+        "distinct": 5,
+        "values": [
+          "Search",
+          "Organic",
+          "Facebook",
+          "Email",
+          "Display"
+        ]
+      },
+      "created_at": {
+        "type": "TIMESTAMP",
+        "null_pct": 0.0,
+        "distinct": 95572,
+        "range": [
+          "2019-01-02 00:22:00+00",
+          "2026-09-30 17:12:00+00"
+        ]
+      }
+    }
+  }
+}

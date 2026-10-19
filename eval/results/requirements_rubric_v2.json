@@ -1,0 +1,287 @@
+[
+ {
+  "id": "marketing",
+  "scores": {
+   "found_real_need": 5,
+   "kpis_unambiguous": 5,
+   "useful_questions": 5,
+   "flagged_data_limits": 5,
+   "approvable_as_written": 4,
+   "comment": "Main strength: the brief covers the real need. It names the budget-shift decision, defines the 12-month repeat rate precisely, sets a monthly view over two years by channel, notes the CMO as audience, and explains the missing spend data, the attribution assumption and the small-cohort risk. Main gap: the 'last 2 years' window (Oct 2023\u2013Sep 2025) still needs the requester to confirm it, and the brief never lists the actual channels, so a manager would likely ask for one quick change before signing off."
+  },
+  "brief": {
+   "business_question": "Which marketing channels bring in customers who place a second order within 12 months of their first order?",
+   "audience": "The requester (primary). The key channel comparison will be shared with the CMO.",
+   "decision_supported": "Where to move marketing budget next quarter, by shifting spend toward channels whose customers come back and buy again.",
+   "kpis": [
+    {
+     "name": "12-month repeat purchase rate",
+     "plain_definition": "Of the customers a channel brought in, the share who placed a second order within 12 months of their first order. Cancelled orders are excluded, both as the first and as the second order. Each customer is grouped by the month of their first non-cancelled order and by the marketing channel they came from."
+    },
+    {
+     "name": "New customers (supporting count)",
+     "plain_definition": "Number of customers in each channel and first-order month. This is the base for the rate, so small groups can be read with caution."
+    },
+    {
+     "name": "Repeat customers (supporting count)",
+     "plain_definition": "Number of those customers who placed a second non-cancelled order within 12 months of their first order."
+    }
+   ],
+   "dimensions": [
+    "Marketing channel (the channel the customer came from)",
+    "Month of the customer's first order"
+   ],
+   "filters": [
+    "Marketing channel",
+    "First-order month range"
+   ],
+   "time_range": "Customers whose first order was in the last 2 years in which every customer has had a full 12 months to reorder: October 2023 to September 2025, shown monthly by first-order month. Later customers are excluded because they have not had 12 months yet.",
+   "comparison": "Channels compared with each other. No year-over-year comparison.",
+   "open_assumptions": [
+    "'Last 2 years' means first orders from Oct 2023 to Sep 2025, so every customer has a full 12 months. It does not mean the 2 years up to Sep 2026. The requester said full 12 months was acceptable but also asked for the last 2 years, so please confirm.",
+    "The 12-month window starts on the date of the customer's first non-cancelled order and covers 365 days.",
+    "'Cancelled' is taken as orders with a cancelled status. Returned orders are still counted unless told otherwise.",
+    "Customers with no non-cancelled order are not counted.",
+    "Monthly cohorts for a single channel may be small, so the dashboard will also show a total for the full 2-year period per channel for the CMO comparison. This was not explicitly requested.",
+    "Channel is the one recorded on the customer record, which is assumed to be the channel that first acquired them."
+   ],
+   "out_of_scope": [
+    "Marketing spend, cost per customer and return on ad spend by channel: the data has no marketing cost figures, so the dashboard can show which channels bring repeat buyers but not which are cheapest or most profitable per dollar spent.",
+    "Customers acquired after September 2025: they have not yet had a full 12 months, so their 12-month repeat rate cannot be measured.",
+    "Breakdowns by gender, age, country or product category: not wanted for this version."
+   ]
+  }
+ },
+ {
+  "id": "returns",
+  "scores": {
+   "found_real_need": 4,
+   "kpis_unambiguous": 4,
+   "useful_questions": 4,
+   "flagged_data_limits": 5,
+   "approvable_as_written": 3,
+   "comment": "The brief gets the decision (which categories and brands to review with suppliers), the return-rate definition with delivered-or-returned items as the denominator, the last 12 months with a monthly trend, and the category and brand breakdowns, and it is open about assumptions and data gaps. Its main gap is that the volume cutoff covers brands only and shows every category, which misses the stakeholder's focus on categories with enough volume; several basics are also still left for the stakeholder to confirm, such as whether items are dated by order or return date and how to treat the partial latest month, and the audience question added little."
+  },
+  "brief": {
+   "business_question": "Which product categories and brands have high return rates over the last 12 months, and is the return rate for each getting better or worse month by month?",
+   "audience": "The requester (for supplier review decisions). The merchandising team may receive a copy later.",
+   "decision_supported": "Which categories and brands to review with suppliers because of high or worsening return rates.",
+   "kpis": [
+    {
+     "name": "Return rate",
+     "plain_definition": "Returned items divided by items that were delivered or returned. Cancelled items, and items not yet delivered (for example still processing or shipped), are excluded from both the top and bottom. Calculated over the chosen period and for each category or brand."
+    },
+    {
+     "name": "Returned items",
+     "plain_definition": "Count of items with a return recorded, in the period."
+    },
+    {
+     "name": "Items delivered or returned",
+     "plain_definition": "Count of items that were delivered or returned, in the period. This is the denominator of the return rate and is also shown as the volume measure."
+    }
+   ],
+   "dimensions": [
+    "Product category",
+    "Brand",
+    "Month (for the trend line)"
+   ],
+   "filters": [
+    "Product category",
+    "Brand",
+    "Minimum volume: brands under 50 items (delivered or returned) in the last 12 months are hidden"
+   ],
+   "time_range": "Last 12 months, with a monthly trend line. The period ends with the latest data (September 2026).",
+   "comparison": "Month-by-month trend within the last 12 months, for each category and brand, to show whether rates are getting worse. No year-over-year comparison was requested.",
+   "open_assumptions": [
+    "Each item is assigned to a month by its order date. The alternative is the return date. Please confirm which you prefer.",
+    "The last 12 months means the 12 months up to the latest data. September 2026 may be incomplete, so it may need to be shown as a partial month or left out. Please confirm.",
+    "Items still in progress (processing or shipped) are excluded from the rate, because the request counts only delivered or returned items.",
+    "The 50-item minimum applies to items delivered or returned over the full 12 months, not to each month.",
+    "The 50-item minimum applies to brands only. Categories are shown in full. Please confirm.",
+    "Monthly brand or category trends can be noisy when monthly volume is low. Please confirm whether small months should be flagged.",
+    "The dashboard does not assume returns are rising. It shows the current rate and trend so you can see whether they are."
+   ],
+   "out_of_scope": [
+    "Reasons for returns (for example wrong size or defective): the data has no return reason, so it can't explain why items come back.",
+    "Cost of returns (shipping, restocking, lost margin): the data has no return handling costs. Only the item cost and retail price are available, and a cost estimate was not requested."
+   ]
+  }
+ },
+ {
+  "id": "finance",
+  "scores": {
+   "found_real_need": 4,
+   "kpis_unambiguous": 4,
+   "useful_questions": 4,
+   "flagged_data_limits": 5,
+   "approvable_as_written": 3,
+   "comment": "The brief covers the decision and gets the Revenue exclusions and gross margin % right. It also covers the month and quarter views, the 2026 year-to-date versus 2025 comparison, and it is honest about its assumptions, including the date basis and the partial Q3. The main gap is the Men/Women split: the analyst never asked about it, and the brief defaults to the customer's gender instead of the product's department. It flags this, but the default is wrong, so the brief needs a change before sign-off."
+  },
+  "brief": {
+   "business_question": "How are revenue and gross margin for Men and Women in 2026 year to date compared with the same period of 2025?",
+   "audience": "The board of directors (non-technical).",
+   "decision_supported": "Check whether the business is on track against last year.",
+   "kpis": [
+    {
+     "name": "Revenue",
+     "plain_definition": "Sum of the sale price of order items that were not cancelled and not returned. Counted in the period of the order's shipped date. Shown in the period selected (month or quarter)."
+    },
+    {
+     "name": "Gross margin (amount)",
+     "plain_definition": "Revenue minus the product cost of the same items (same exclusions and same dates as Revenue)."
+    },
+    {
+     "name": "Gross margin %",
+     "plain_definition": "Gross margin amount divided by Revenue, for the same period and group."
+    },
+    {
+     "name": "Year-over-year change",
+     "plain_definition": "For Revenue, Gross margin amount and Gross margin %: the 2026 value versus the same period in 2025. Revenue and margin amount are shown as % change. Margin % is shown as a difference in percentage points."
+    }
+   ],
+   "dimensions": [
+    "Gender (Men, Women)",
+    "Month",
+    "Quarter"
+   ],
+   "filters": [
+    "Gender (Men / Women / both)",
+    "Month or quarter view"
+   ],
+   "time_range": "2026 year to date (January to the latest data, September 2026), shown by month and by quarter. Q3 2026 is marked as partial.",
+   "comparison": "Year over year: 2026 versus 2025, for the same months and quarters.",
+   "open_assumptions": [
+    "Date basis: the shipped date. The stakeholder was unsure which date finance reports to the board. Please check with finance and confirm. Items not yet shipped have no shipped date and are not counted.",
+    "Gender: the Men and Women split uses the gender of the customer who placed the order. It could instead use the product's department. Please confirm which one.",
+    "Partial Q3: Q3 2026 is compared with the same part of Q3 2025 (same months and days), not the full quarter, so the comparison is fair. Full-year 2025 quarters are shown for reference only. Please confirm.",
+    "Gross margin uses the product cost on the products list. It assumes there are no other costs such as shipping, discounts or payment fees.",
+    "Revenue is the item sale price. It does not include shipping, tax or refunds beyond the returned-item exclusion.",
+    "Currency is the one used in the data. No conversion is applied."
+   ],
+   "out_of_scope": [
+    "Any other period or genders: only Men and Women are requested. Other values, if present, are left out.",
+    "Budget or target comparison: the data has no targets, so 'on track' is judged only against last year."
+   ]
+  }
+ },
+ {
+  "id": "merchandising",
+  "scores": {
+   "found_real_need": 5,
+   "kpis_unambiguous": 4,
+   "useful_questions": 5,
+   "flagged_data_limits": 5,
+   "approvable_as_written": 4,
+   "comment": "The brief captures the full need: the bottom 10% by units within each category combined with margin below 20% over 12 months, units, revenue and margin shown per product, and the link to next season's buying plan. It used four well-chosen questions and is candid about limits like zero-sales products, part-year launches and ties. The main gaps are that the 12-month window is still open, and 'rounded to whole products' for the 10% cutoff doesn't say whether to round up, down or to the nearest product, so two analysts could flag different products. A manager would also have to sign off on the brand and department additions nobody asked for."
+  },
+  "brief": {
+   "business_question": "Within each product category, which products sold the fewest units over the last 12 months and also earn a margin below 20%?",
+   "audience": "Merchandising team",
+   "decision_supported": "Which products to drop from next season's buying plan.",
+   "kpis": [
+    {
+     "name": "Units sold",
+     "plain_definition": "Number of order items sold per product in the last 12 months. Items in cancelled orders are excluded. Returned items are still counted, because returns are not part of this analysis."
+    },
+    {
+     "name": "Sales revenue",
+     "plain_definition": "Sum of the actual sale prices of the counted items per product over the last 12 months. Cancelled items excluded."
+    },
+    {
+     "name": "Product cost",
+     "plain_definition": "Sum of the unit cost of the counted items per product over the last 12 months."
+    },
+    {
+     "name": "Margin %",
+     "plain_definition": "(Sales revenue \u2212 Product cost) \u00f7 Sales revenue, per product, over the last 12 months, using actual sale prices. Cancelled items excluded."
+    },
+    {
+     "name": "Bottom 10% by units (within category)",
+     "plain_definition": "A product is flagged if its units sold are in the lowest 10% of products in its own category, ranked by units sold over the last 12 months."
+    },
+    {
+     "name": "Candidate to stop selling",
+     "plain_definition": "A product that is in the bottom 10% by units within its category AND has a Margin % below 20%."
+    }
+   ],
+   "dimensions": [
+    "Product category (list grouped by category)",
+    "Product (name)",
+    "Brand (shown as a detail column)"
+   ],
+   "filters": [
+    "Category",
+    "Brand",
+    "Department"
+   ],
+   "time_range": "Last 12 months of data, which runs to September 2026.",
+   "comparison": "None. Products are compared with others in the same category, not with a prior period.",
+   "open_assumptions": [
+    "'Last 12 months' means the 12 full calendar months before the latest data month, or the 12 months ending at the latest order date. Please confirm which. September 2026 may be a partial month.",
+    "Only products with at least one non-cancelled sale in the 12 months are ranked. Products with zero sales are not in the order data, so they are not ranked. Please confirm this is fine.",
+    "Ties at the 10% cutoff: all products tied at the cutoff are included.",
+    "Products that were only launched part-way through the 12 months are ranked like all others. They may look like slow sellers because they were on sale for less time.",
+    "Only cancelled orders are excluded. Other statuses (such as shipped, processing, returned) count as sold.",
+    "The 'bottom 10%' is rounded to whole products within each category. Very small categories may have zero flagged products.",
+    "The 20% margin threshold is applied as 'strictly below 20%'.",
+    "Brand and department filters, and the brand column, were added for usability and were not requested. Please approve or remove."
+   ],
+   "out_of_scope": [
+    "Returns and return rate: you said they do not factor in for now, so they are not part of the criteria."
+   ]
+  }
+ },
+ {
+  "id": "repeat_customers",
+  "scores": {
+   "found_real_need": 4,
+   "kpis_unambiguous": 4,
+   "useful_questions": 4,
+   "flagged_data_limits": 5,
+   "approvable_as_written": 4,
+   "comment": "The brief defines the 12-month repeat purchase rate by first-order year, splits US from international, and states the limits plainly: 2025 and 2026 groups are marked incomplete, and a lower 2026 figure alone does not prove a drop. Its main gap is that it never offers a fair way to compare 2026 with earlier years (for example, measuring every group over the same number of months since the first order), so it may not answer whether repeat purchases dropped; it also leaves out a by-country view and never says outright that 'no drop' is a valid result."
+  },
+  "brief": {
+   "business_question": "Has the share of customers who place a second order within 12 months of their first order changed across first-order years, including 2026, and in which group (US or international) is any change concentrated?",
+   "audience": "The requester and the executive team.",
+   "decision_supported": "Whether to change retention strategy and spending (loyalty offers, email campaigns), and which group (US or international) to target.",
+   "kpis": [
+    {
+     "name": "12-month repeat purchase rate",
+     "plain_definition": "Of customers whose first order falls in a given year, the percentage who placed a second, separate order within 12 months of their first order date. Customers are grouped by the year of their first order. Customers with only one order count as not repeating. Second order means a different order, not a second item in the same order."
+    },
+    {
+     "name": "Customers in group (first-time customers)",
+     "plain_definition": "Number of customers whose first order was in that year. This is the base for the rate. It is shown so readers can see how large each group is."
+    },
+    {
+     "name": "Repeat customers",
+     "plain_definition": "Number of customers in that group who placed a second order within 12 months of their first order. This is the top part of the rate."
+    }
+   ],
+   "dimensions": [
+    "Year of first order (2019 to 2026)",
+    "US vs. international (based on customer country)"
+   ],
+   "filters": [
+    "Year of first order",
+    "US vs. international"
+   ],
+   "time_range": "First-order years 2019 to 2026. Orders are tracked up to the end of the data (September 2026).",
+   "comparison": "Compare first-order year groups with each other (year over year), shown separately for US and international. Groups without a full 12 months of follow-up are shown but clearly marked as incomplete.",
+   "open_assumptions": [
+    "A first-order year group is marked 'complete' only if every customer in it has had a full 12 months of follow-up before the data ends (September 2026). On that basis 2019 to 2024 are complete. 2025 and 2026 are marked 'incomplete'. Please approve.",
+    "Incomplete groups will look lower by design, because customers have had less time to reorder. A lower 2026 figure alone does not prove a real drop. The dashboard will carry a note saying this. Please approve.",
+    "Cancelled orders are excluded when finding a customer's first and second order. Returned orders still count as orders. Please confirm, because the request did not say.",
+    "US vs. international is based on the customer's country in the customer record: US is one group and every other country is 'international'. Customers with no country are shown as 'unknown'. Please approve.",
+    "The 12 months are counted from the first order date, to the day. A second order on the same day as the first counts only if it is a separate order. Please approve.",
+    "Customers who never placed an order are not counted."
+   ],
+   "out_of_scope": [
+    "Why repeat purchases changed: the data holds orders, products and customer details only. It has no record of loyalty offers, email campaigns or customer reasons, so it can show where a change happened, not what caused it.",
+    "A confirmed answer on whether 2026 first-time customers repeat less within 12 months: the data ends in September 2026, so that group cannot have a full 12 months of follow-up. The dashboard can only show the partial result, marked incomplete.",
+    "Breakdowns by marketing channel, gender, age or product category: the requester chose not to include them for now."
+   ]
+  }
+ }
+]

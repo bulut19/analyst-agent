@@ -1,0 +1,143 @@
+{
+  "mappings": [
+    {
+      "item": "Revenue",
+      "item_type": "kpi",
+      "columns": [
+        "order_items.sale_price",
+        "order_items.status",
+        "order_items.created_at",
+        "order_items.product_id",
+        "products.id",
+        "products.department"
+      ],
+      "logic": "Grain is one row per order item. Sum order_items.sale_price where order_items.status is not Cancelled and not Returned. That keeps Complete, Shipped and Processing. Group by quarter of order_items.created_at and by products.department."
+    },
+    {
+      "item": "Gross margin ($)",
+      "item_type": "kpi",
+      "columns": [
+        "order_items.sale_price",
+        "products.cost",
+        "order_items.status",
+        "order_items.created_at",
+        "order_items.product_id",
+        "products.id"
+      ],
+      "logic": "Same item filter as Revenue (exclude Cancelled and Returned). Gross margin $ = SUM(order_items.sale_price) - SUM(products.cost). Each item row is one unit, so cost is counted once per item. Group by quarter and department."
+    },
+    {
+      "item": "Gross margin (%)",
+      "item_type": "kpi",
+      "columns": [
+        "order_items.sale_price",
+        "products.cost",
+        "order_items.status",
+        "order_items.created_at"
+      ],
+      "logic": "Gross margin $ divided by Revenue, both summed over the same kept items in the same quarter and department. Divide the sums. Do not average item-level percentages. Show nothing if revenue is zero."
+    },
+    {
+      "item": "Year-over-year change",
+      "item_type": "kpi",
+      "columns": [
+        "order_items.sale_price",
+        "products.cost",
+        "order_items.status",
+        "order_items.created_at"
+      ],
+      "logic": "Compute Revenue, Gross margin $ and Gross margin % per quarter and department. Compare each to the same quarter one year earlier. Revenue change % = (this - prior) / prior. Gross margin $ change can use the same % formula. Gross margin % change = this % minus prior %, in percentage points. 2019 quarters have no prior year, so show blank."
+    },
+    {
+      "item": "Quarter",
+      "item_type": "dimension",
+      "columns": [
+        "order_items.created_at"
+      ],
+      "logic": "Calendar quarter of order_items.created_at (Q1 = Jan to Mar). Quarter boundaries are in UTC, as stored."
+    },
+    {
+      "item": "Department: Men's vs. Women's",
+      "item_type": "dimension",
+      "columns": [
+        "products.department",
+        "order_items.product_id",
+        "products.id"
+      ],
+      "logic": "Join each item to its product and use products.department (Men or Women). Do not use users.gender or orders.gender. Those describe the customer, not the product department."
+    },
+    {
+      "item": "Filter: Department (Men's, Women's, or both)",
+      "item_type": "filter",
+      "columns": [
+        "products.department"
+      ],
+      "logic": "Filter on products.department in ('Men','Women'). Both is the default. Only these two values exist in the data."
+    },
+    {
+      "item": "Filter: Year or quarter range",
+      "item_type": "filter",
+      "columns": [
+        "order_items.created_at"
+      ],
+      "logic": "Filter on the quarter or year derived from order_items.created_at. Suggested default: the last 4 to 8 quarters. A year-over-year comparison needs the prior-year quarter loaded too, even when it is outside the selected range."
+    },
+    {
+      "item": "Time range: quarterly 2019 to Q3 2026 (Q3 shown quarter-to-date)",
+      "item_type": "time_range",
+      "columns": [
+        "order_items.created_at"
+      ],
+      "logic": "Include items from 2019-01-01 up to the cut-off date in Q3 2026 (July to September). Exclude any item created after 2026-09-30, because some rows run into early October 2026 (Q4). For the quarter-to-date comparison, use the same day span in Q3 2025, for example July 1 to the cut-off day."
+    }
+  ],
+  "joins": [
+    "order_items.product_id = products.id (needed for department and cost)",
+    "No join to orders or users is needed. Revenue, cost, status and date are all available from order_items plus products."
+  ],
+  "gaps": [
+    {
+      "item": "Cost at the time of sale",
+      "reason": "products.cost is one current value per product. The data has no cost history. If costs changed over time, past gross margin is restated at today's cost.",
+      "substitute": "Use products.cost as-is and note this on the dashboard."
+    },
+    {
+      "item": "Revenue 'before tax and shipping'",
+      "reason": "There are no tax or shipping columns. sale_price is the item price, so it excludes them by construction. We cannot check that it matches the finance definition.",
+      "substitute": "Use order_items.sale_price. Ask finance to confirm."
+    },
+    {
+      "item": "Year-over-year change for 2019 quarters",
+      "reason": "The data starts on 2019-01-13. There is no 2018 data, so no 2019 quarter has a prior-year comparison.",
+      "substitute": "Show YoY from Q1 2020. Q1 2019 is also a partial quarter, which makes Q1 2020 YoY look larger than the true change."
+    },
+    {
+      "item": "Quarter-to-date for Q3 2026",
+      "reason": "Order dates in the data end on 2026-09-30, so Q3 2026 looks complete. The brief calls it quarter-to-date, but the data does not say today's date or the cut-off.",
+      "substitute": "Please confirm the cut-off date. Until then, compare the same day span in Q3 2025 as the brief says."
+    },
+    {
+      "item": "Items 'the customer kept'",
+      "reason": "The data has no 'kept' flag. Only Complete means delivered and kept. Shipped and Processing items are not yet final, and the brief only excludes Cancelled and Returned.",
+      "substitute": "Include Complete, Shipped and Processing. Optionally show Complete only as a stricter view. Needs a decision."
+    },
+    {
+      "item": "Fiscal year",
+      "reason": "The data has no fiscal calendar.",
+      "substitute": "Use calendar quarters, as assumed in the brief."
+    }
+  ],
+  "data_notes": [
+    "Use order_items.status, not orders.status. Status is recorded per item, and items in one order can differ.",
+    "Status is the current status, not the status at the time. A past quarter's revenue can fall as late returns arrive. returned_at runs to 2026-10-08, after the last order date.",
+    "Recent quarters hold more Shipped and Processing items, which may later be cancelled or returned. Recent revenue may be overstated compared with older, settled quarters, which can distort YoY.",
+    "order_items.created_at runs to 2026-10-04, but orders.created_at ends 2026-09-30. Cap the data at the Q3 cut-off so October items do not leak in.",
+    "Item dates and order dates can differ slightly. This mapping uses order_items.created_at as the order date, which avoids a join and keeps the period tied to the item. Using orders.created_at is an alternative but could move a few items across a quarter boundary.",
+    "products.department has only Men and Women. The brief's 'other departments are left out' rule does not remove anything.",
+    "Department is a product attribute. orders.gender and users.gender are customer gender, and a Women's customer can buy Men's items. Do not mix them.",
+    "Gross margin % should be a ratio of sums. Averaging item-level margins would give wrong results.",
+    "The first quarter, Q1 2019, starts on 2019-01-13, so it is a partial quarter.",
+    "Customer personal fields (names, email) are not used."
+  ],
+  "invalid_columns": []
+}

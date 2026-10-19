@@ -1,0 +1,50 @@
+# returns
+
+**Business question:** Which product categories and brands have unusually high item return rates over the last 12 months, and are any of them getting worse month by month?
+
+# Data Mapping
+
+| Item | Type | Columns | Logic |
+|---|---|---|---|
+| Item return rate | kpi | `order_items.status`, `order_items.id`, `order_items.product_id`, `products.id`, `products.category`, `products.brand` | Grain is order_items (one row per item). Numerator = items with status 'Returned'. Denominator = items with status 'Complete' or 'Returned'. Cancelled, Shipped and Processing are excluded from both. Group by products.category or products.brand. Use the item status, not orders.status, because items in one order can differ. |
+| Items returned | kpi | `order_items.id`, `order_items.status`, `order_items.created_at` | Count of order_items rows with status = 'Returned', placed in a month by order_items.created_at (proposed, to be confirmed). This keeps it consistent with the rate. Counting by returned_at would give a different number. |
+| Items sold (delivered or returned) | kpi | `order_items.id`, `order_items.status`, `order_items.created_at` | Count of order_items rows with status in ('Complete','Returned'), placed in a month by order_items.created_at. Excludes Cancelled, Shipped and Processing. Status is used rather than delivered_at, because status is the cleaner per-item flag. |
+| Gap to company average | kpi | `order_items.status`, `order_items.created_at`, `products.category`, `products.brand` | Category (or brand) item return rate minus the company-wide item return rate, in percentage points. The company rate uses the same formula across all items in the same 12 months, with no category, brand or volume filter applied. Compute it as a separate fixed benchmark so the filters do not change it. |
+| Monthly item return rate | kpi | `order_items.status`, `order_items.created_at`, `products.category`, `products.brand` | Same return rate formula, grouped by calendar month of order_items.created_at (UTC) within the 12-month window, per category or brand. Show only for categories and brands that pass the 100-item threshold. |
+| Product category | dimension | `products.category` | Join order_items to products on product_id and group by products.category. Category and brand are shown separately, not combined. |
+| Brand | dimension | `products.brand` | Join order_items to products on product_id and group by products.brand. Brand is the closest thing to a supplier. About 0.1% of products have no brand; show them as 'Unknown' or exclude them (to be decided). |
+| Month (trend) | dimension | `order_items.created_at` | Truncate order_items.created_at to calendar month (UTC). This is the proposed month definition and needs confirmation, because the brief says 'ordered or shipped'. |
+| Category filter | filter | `products.category` | Filter on products.category. It should not change the company-wide benchmark. |
+| Brand filter | filter | `products.brand` | Filter on products.brand. It should not change the company-wide benchmark. |
+| Minimum volume (at least 100 items delivered or returned in the 12-month window, default on) | filter | `order_items.id`, `order_items.status`, `products.category`, `products.brand` | For each category or brand, count items with status in ('Complete','Returned') across the whole 12-month window. Keep only those with 100 or more. Apply the threshold to the 12-month total, not to each month. Evaluate separately for category and for brand. |
+| Last 12 months | time_range | `order_items.created_at` | Keep items with created_at inside 12 full calendar months ending at the latest complete month. If September 2026 is excluded, the window is Sep 2025 to Aug 2026. If September 2026 counts as complete, the window is Oct 2025 to Sep 2026. Which one applies needs confirmation (see data notes). Do not use 'today'. Anchor on the latest date in the data. |
+
+## Joins
+
+- `order_items.product_id = products.id (needed for category and brand; this is the only join needed)`
+- `order_items.order_id = orders.order_id (not needed for this brief; item status is used)`
+- `order_items.user_id = users.id (not needed for this brief)`
+
+## Gaps
+
+- **Reasons for returns:** The data has no return reason. It shows where returns are high, not why. *Substitute:* none
+- **Supplier-level view:** There is no supplier field. Brand is only a proxy, and one supplier may own several brands that cannot be grouped. *Substitute:* Use products.brand. products.distribution_center_id is a warehouse, not a supplier, so it is not a substitute.
+- **'Unusually high':** No cut-off has been agreed. The data supports a gap in percentage points versus the company rate, but no significance test or fixed threshold is defined. *Substitute:* Rank by gap to company average, with the 100-item minimum. A cut-off (e.g. +5 points) needs to be agreed.
+- **'Getting worse month by month':** The brief has no rule for what counts as 'worse'. Monthly counts for many brands will be small, so single-month changes will be noisy. Recent months are also understated (see data notes). *Substitute:* Show the monthly rate line next to monthly volume. Optionally use a 3-month rolling rate. The rule for 'worse' needs to be agreed.
+- **Month placement 'ordered or shipped':** The brief leaves this open. Ordered date (created_at) and shipped date (shipped_at) give different months. Returned date is also possible but would not match the rate's denominator. *Substitute:* Proposed: order_items.created_at. Needs approval.
+
+## Data notes
+
+- Recent months will look better than they are. Items ordered recently have had less time to be returned, and some Shipped or Processing items are excluded from the rate. Returns often come weeks after delivery. This biases the 'getting worse' trend downward in the last 1-2 months. Consider flagging the latest months as immature.
+- The brief says September 2026 is partial. But orders.created_at runs to 2026-09-30 23:59 and users.created_at to 2026-09-30, so September looks complete in the order data. Yet order_items.created_at, delivered_at and returned_at run into early Oct 2026. Confirm the cut-off month before building. Items from the final weeks will have more unfinished statuses.
+- Return status is current, not historical. An item shows 'Returned' with returned_at, but the data does not show its earlier status. Rates for old months are fine, but recent ones can still change.
+- Use order_items.status, not orders.status. Items in one order can have different statuses, and price and status are recorded per item.
+- Items with status 'Returned' were delivered first, so they belong in the denominator. Complete means delivered and kept.
+- Category names look overlapping: 'Socks' and 'Socks & Hosiery', 'Pants' and 'Pants & Capris', 'Suits' and 'Suits & Sport Coats'. These are separate values in the data. Splitting one real category across two names dilutes volume and may hide it below the 100-item minimum. Decide whether to merge them.
+- Brand has about 2,756 distinct values and about 0.1% nulls. Many brands will fall below 100 delivered or returned items in 12 months and will be hidden by the default filter. Brand name spelling variants are possible and cannot be checked from the schema.
+- products.department (Men/Women) is the product department. orders.gender and users.gender are the customer's gender. Neither is needed here.
+- Timestamps are in UTC. Month boundaries are UTC calendar months.
+- The company-wide benchmark should use all items in the window, including brands and categories below the 100 threshold. Otherwise the average shifts when filters change.
+- Personal data (first_name, last_name, email) is not needed and should not be shown.
+
+*Column check: All columns exist in the schema.*
