@@ -2,7 +2,7 @@
 
 Most dashboards go wrong before any SQL is written: the request is vague, the definitions are never agreed, and nobody checks the data. This agent works the way a business analyst does. It interviews the stakeholder, audits the data, agrees on exact metric definitions, checks in on the choices that change the numbers, and only then writes the SQL and builds the dashboard.
 
-**[Try the live app](https://analyst-agent-melisa.streamlit.app/)**: replay three finished runs step by step, or give the agent a new request and watch it work (about 5 minutes).
+**[Try the live app](https://analyst-agent-melisa.streamlit.app/)**: replay three finished runs step by step, or give the agent a new request and watch it work.
 
 ## Results
 
